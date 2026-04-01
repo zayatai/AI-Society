@@ -1,0 +1,224 @@
+[
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "I CSI 435 Artificial Intelligence (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "An introduction to the broad spectrum of approaches and techniques of Artificial Intelligence, such as search and planning problems, basic machine learning, Markov decision processes, reinforcement learning, Bayesian networks, propositional and first-order logic, and potentially introduction to deep learning. Prerequisite(s): grade of C or better in A MAT 220 or I CSI 311; A MAT 367 or A MAT 370, I CSI 401 and I CSI 403.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "I CSI 436 Machine Learning (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce the use of the MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Only one version may be taken for credit. Prerequisite(s): A MAT 214 (or equivalent) and\u00a0I CSI/I\u00a0ECE 201. Normally offered in the fall.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "C INF 135 Concepts of Artificial Intelligence (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "An introduction to the technical foundations of artificial intelligence as well as its relevance to, and implications for modern society. The course will cover the basics of artificial intelligence and machine learning (AI/ML). This will include hands-on work. The importance of data selection, handling, etc. will also be covered. In addition, as AI/ML becomes more prevalent, it has tremendous implications in the world. The course will introduce issues of fairness, bias, explainability, etc., and how these and other issues must be addressed in the design, deployment, and use of AI/ML systems.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "C INF 320 Ethical Considerations in Artificial Intelligence (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "Starting as a mere technical and scientific curiosity, artificial intelligence and machine learning systems have come to take an important and increasing role in people's lives. This course explores different aspects of ethical and moral implications of the use of artificial intelligence and machine learning systems. The range from the considerations of artificial intelligence as a kind of information technology system with societal consequences, through issues in technical artificial intelligence such as bias, fairness, and explainability. The course also considers ethical and legal implications. Prerequisite(s): C INF 135.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "This course offers students a comprehensive exploration of contemporary software engineering, with an emphasis on the integration of emerging practices, mobile development, and cloud computing. Utilizing a project-based learning framework, participants will advance their understanding of software engineering methodologies, gaining the skills necessary to develop robust, scalable, and secure applications for a variety of platforms. Students will engage with key subjects such as cloud-based microservices, machine learning techniques for software defect management and sentiment analysis, and software testing frameworks tailored for Agile and DevOps. This course prepares students for real-world challenges in software engineering, while also laying the groundwork for advanced studies in service and cloud computing, big data applications, and security challenges in cloud-based software engineering. Prerequisite(s): C INF 202 and C INF 308.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "C INF 438 Applied Machine Learning (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "A technically-oriented course in the concepts and implementation of machine learning systems. It covers unsupervised and supervised approaches. A variety of algorithms are discussed as well as their applicability. The critical importance of data for machine learning is also covered. Student learning will include extensive implementation exercises and projects. Prerequisite(s): C INF 300.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce the use of the MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Only one version may be taken for credit. Prerequisite(s): A MAT 214 (or equivalent) and I CSI/I ECE 201.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "I ECE 465 Introduction to Machine Learning for Engineers (3)",
+    "url": "https://www.albany.edu/undergraduate-bulletin/electrical-computer-engineering-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "This course offers a comprehensive introduction to machine learning (ML). Students will gain both theoretical knowledge and practical skills required to utilize ML techniques for building Internet-of-Things (IoT) applications. The theory covers the mathematical methods that are utilized to train and test ML models. The course curriculum is designed to focus on applying ML models to realize various signal processing, communication, and control operations. The course assignments and projects involve coding-based tasks that enable the students to design and implement their own ML models and optimize them for targeted IoT applications. The high-level overview of the topics covered in this course includes the extraction of feature vectors for signal processing, deep learning (DL) for communication, and reinforcement learning (RL) control. Prerequisite(s): A MAT 214, A MAT 220, I ECE 371 and either I ECE 233 or I ECE 332.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/electrical-computer-engineering-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Undergraduate",
+    "description": "Disruptive financial technology is a fast-moving global phenomenon. This course provides an overview of various financial technologies, including blockchain and artificial intelligence. We explain how blockchain and artificial intelligence work and are used in financial businesses. We evaluate the transformative effects of financial technologies on a variety of businesses, including cryptos, insurance, marketplace lending, crowdfunding, and personal banking. We also discuss the balance between regulation and innovation. Only one version may be taken for credit. Prerequisite(s): declared School of Business majors; B FIN 236, B FIN 300, and B FIN 301.",
+    "url": "https://www.albany.edu/undergraduate-bulletin/public-administration-policy-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "An introduction to applications of probability and analysis in computer science and related areas. This course serves as a mathematical foundation for machine learning theory. Topics include an introduction to axiomatic probability, notions of convergence, limit theorems, first and second moment methods, martingales, concentration of measure (Chernoff, Hoeffding, McDiarmid, etc.), randomized algorithms (drawing largely from graph analysis, cryptography & number theory,\u00a0 hashing,\u00a0 numerical linear algebra),\u00a0 sampling,\u00a0 random graphs, Markov chains, random walks on graphs, basics of estimation theory, statistical learning theory, and\u00a0 information\u00a0 theory\u00a0 for\u00a0 statistical\u00a0 sample\u00a0 complexity\u00a0 bounds. Applications to algorithm design and statistical learning on discrete random structures will be emphasized. Prerequisite: Csi 503. Student should have knowledge of probability and statistics.",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Csi 535 Artificial Intelligence I (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "A first course in artificial intelligence (AI) introducing basic concepts and techniques. Topics include problem representation, production systems, heuristic search, predicate logic, and structured representation of knowledge. Techniques of sample search and sample problem solving systems are represented. Exercises in a selected AI programming language. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics.\u00a0Students who have received credit for ICSI435 cannot receive credit for this course.",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Csi 536 Machine Learning (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Machine learning is an important and rapid growing branch of artificial intelligence. The aim of machine learning is to design algorithm that can extract information from environment automatically and improve its ability to perform the intended task. Currently, machine learning has been applied in various fields including engineering, bioinformatics, data mining and neurosciences, to name a few. This course provides a broad introduction to machine learning. Specifically, topics that will be covered in the class may include: numerical optimization methods that are essential for machine learning algorithms dimension reduction methods: principal component analysis & ISOMAP classification methods: linear discriminant analysis, k-nearest neighbor classifier, and logistic regression regression methods: least squares regression, ridge regression, and l1 regularized least squares regression (LASSO) clustering methods: k-means clustering and EM algorithm neural networks support vector machines for classification and regression. Prerequisites: C or above in CSI 521 or passing the  Departmental examination in discrete math . Recommended - Students should have knowledge of linear algebra, calculus, probability, and numerical methods. Students who have received credit for CSI 436 cannot receive credit for this course.",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Prerequisites: Csi 201, Mat 214, or equivalents, or permission of instructor; Phy 509 or equivalent programming experience with permission of the instructor. Students who have received credit for APHY/ICSI/CINF451 cannot receive credit for this course.",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Csi 635 Artificial Intelligence II (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Csi 661 Topics in Artificial Intelligence (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Advanced topics in Artificial Intelligence. Topics may vary. May be repeated for credit with permission of the department. Prerequisite: Permission of instructor.",
+    "url": "https://www.albany.edu/graduate-bulletin/computer-science-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Inf 538 Applied Machine Learning (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "A technically-oriented course in the concepts and implementation of machine learning systems. It covers unsupervised and supervised approaches. A variety of algorithms are discussed as well as their applicability. The critical importance of data for machine learning is also covered. Student learning will include extensive implementation exercises and projects. Recommended Prerequisites: Knowledge of statistics.",
+    "url": "https://www.albany.edu/graduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Prerequisites: Csi 201, Mat 214, or equivalents, or permission of instructor; Phy 509 or equivalent programming experience with permission of the instructor.",
+    "url": "https://www.albany.edu/graduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Fundamental concepts and techniques to discover patterns in data, identify variables with predictive power, and to develop predictive models. Topics include statistical, data mining and machine learning concepts and methods: data selection, representation, cleaning and preprocessing; algorithms such as classification, clustering and association rules; advanced techniques such as deep learning, and text and web mining. Best practices on the selection of methods and tools to build predictive models. Prerequisite: Emh 650, Ist 504, or a graduate-level statistics course that covers basic statistics, including regression.",
+    "url": "https://www.albany.edu/graduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "An introduction to the concepts and techniques of data mining for knowledge discovery, using methods from statistics, data analytics, machine learning, pattern recognition, database, and artificial intelligence. These will be used for the automatic or semi-automatic analysis of large quantities of data to extract previously unknown, interesting patterns. Topics include understanding the characteristics of data, data preprocessing, classification, association and correlation rule analysis, cluster analysis, outlier detection, and research frontiers in data mining. The course will explore both the underlying algorithms and their hands-on application in order to promote both in-depth understanding and experience in their use and limitations. Prerequisite: Ist 506.",
+    "url": "https://www.albany.edu/graduate-bulletin/informatics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Mat 592 Machine Learning (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/mathematics-statistics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "The primary goal of this course is to provide students with statistical tools and mathematical principles needed to solve both the traditional and modern data science problems encountered in practice. In particular, the course covers a wide variety of topics in machine learning. It introduces the key terms, concepts and methods in machine learning, with an emphasis on developing critical analytical skills through hands-on exercises of actual data analysis tasks. At the same time, it will cover modern machine learning topics such as boosting and online learning for large-scale data analysis. In addition, the students will practice basic programming skills to use software tools in machine learning. Prerequisites: AMAT591 and AMAT 554.",
+    "url": "https://www.albany.edu/graduate-bulletin/mathematics-statistics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "Mat 593 Practical methods in machine learning (3)",
+    "url": "https://www.albany.edu/graduate-bulletin/mathematics-statistics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Graduate",
+    "description": "This course is the final installment and capstone for the sequence of Machine Learning (MAT 590-593). The student will select a real-world data analysis project which can be effectively addressed by employing machine learning methods. It involves a principled data-analytical process including data preprocessing, the detailed design of the project, comparison of different machine learning methods, and critical analysis of the obtained results. The instructor will provide close guidance throughout the project. Prerequisites: AMAT 590-592 or permission of the instructor.",
+    "url": "https://www.albany.edu/graduate-bulletin/mathematics-statistics-courses.php"
+  },
+  {
+    "source": "bulletin",
+    "level": "Microcredential",
+    "description": "This for-credit microcredential covers the technical fundamentals of artificial intelligence (AI) and its implications for modern society.",
+    "url": "https://www.albany.edu/academics/microcredentials/ai-plus-fundamentals"
+  },
+  {
+    "source": "bulletin",
+    "level": "Microcredential",
+    "description": "It provides learners with an introduction to artificial intelligence, including technical terminology and key concepts in intelligent computer systems, machine learning, natural language processing, robotics and image processing. Learners will perform hands-on activities in the basics of AI and machine learning.",
+    "url": "https://www.albany.edu/academics/microcredentials/ai-plus-fundamentals"
+  },
+  {
+    "source": "bulletin",
+    "level": "Microcredential",
+    "description": "The Artificial Intelligence for Business microcredential equips you with the expertise to harness AI technologies for real-world business applications. You'll learn how to streamline operations, enhance decision-making and solve complex challenges across key areas such as marketing, finance, human resources, cybersecurity and accounting.",
+    "url": "https://www.albany.edu/academics/microcredentials/ai-for-business"
+  },
+  {
+    "source": "bulletin",
+    "level": "Continuing Education",
+    "description": "Category - Any - AI, IT & Data Science Business & Leadership Cybersecurity & Digital Forensics Homeland Security & Emergency Preparedness Nonprofit Management & Philanthropy Public Policy & Government Innovation Format - Any - Hybrid In-person Online-Asynchronous Online-Synchronous Varies based on Session Credit - Any - For Credit Not-for-credit Apply AI Plus Fundamentals Format: In-person, Online-Asynchronous, Online-Synchronous For Credit Applied Spatial Analysis Format: In-person, Online-Synchronous Not-for-credit Artificial Intelligence for Business Format: In-person, Online-Synchronous, Varies based on Session For Credit Astro/Particle Physics Format: In-person For Credit Coaching for Leaders and Managers Format: In-person Not-for-credit Cybersecurity Risk and Auditing Format: In-person For Credit Emerging Nonprofit Leadership Accelerator Format: In-person Not-for-credit Fundamentals of Information Technology Format: Varies based on Session For Credit Introduction to Weather Interpretation Format: In-person Not-for-credit Nonprofit Grant Writing Format: Online-Synchronous Not-for-credit Political Campaign Academy Format: In-person Not-for-credit Political Campaign Management: Core Concepts Format: In-person For Credit Project Management Fundamentals Format: Online-Synchronous Not-for-credit Semiconductor Devices, Materials, and Processes Format: In-person, Online-Synchronous For Credit Semiconductor Industry Business Fundamentals Format: Online-Synchronous Not-for-credit Three-Minute Thesis (3MT): Communicating Research to Broad Audiences Format: Online-Asynchronous Not-for-credit",
+    "url": "https://www.albany.edu/pace/programs"
+  }
+]
