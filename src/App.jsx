@@ -1,228 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
 
-/* ══════════════════════════════════════════════════
-   VERIFIED COURSE DATA — 29 items, 0 fabricated
-   Sources: SOC PDFs (Fall/Summer 2026), Bulletin,
-   PaCE, News Center, SUNY-Google
-══════════════════════════════════════════════════ */
-const CATALOG = [
-  // ── A. DEGREE PROGRAM ──
-  { id:"A1", credentialType:"Degree Program", level:"Graduate", format:"In-Person / Online", term:"Fall 2026",
-    school:"Massry School of Business", dept:"AI for Business",
-    code:"", title:"M.S. in Artificial Intelligence for Business",
-    description:"30-credit master\u2019s program combining technical AI proficiency with business acumen. Six concentration areas, both in-person and fully online tracks.",
-    credits:30, instructor:"Dr. Sanjay Goel (Director)", prereqs:"Bachelor\u2019s degree; see admissions requirements",
-    sourceUrl:"https://www.albany.edu/news-center/news/2025-ualbany-launches-masters-program-ai-business",
-    source:"News Center (Dec 2025)", featured:true },
-
-  // ── B. ACADEMIC MINOR ──
-  { id:"B1", credentialType:"Academic Minor", level:"Undergraduate", format:"In-Person", term:"Fall 2026",
-    school:"College of Arts & Sciences", dept:"Philosophy",
-    code:"", title:"Ethics & Philosophy of Artificial Intelligence Minor",
-    description:"18-credit interdisciplinary minor focused on ethics, law, philosophy, and social consequences of Artificial Intelligence.",
-    credits:18, instructor:"Philosophy Department", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/news-center/news/2026-ualbany-launches-minor-ethics-and-philosophy-artificial-intelligence",
-    source:"News Center (Jan 2026)", featured:true },
-
-  // ── C. MICROCREDENTIALS ──
-  { id:"C1", credentialType:"Microcredential", level:"Certificate", format:"Online", term:"Self-paced",
-    school:"College of Arts & Sciences", dept:"PaCE / AI & Society College",
-    code:"", title:"AI Plus Fundamentals",
-    description:"For-credit undergraduate microcredential building foundational AI literacy across disciplines. Courses stack toward a degree.",
-    credits:7, instructor:"Multiple faculty", prereqs:"Open to all UAlbany undergraduates",
-    sourceUrl:"https://www.albany.edu/academics/microcredentials/ai-plus-fundamentals",
-    source:"PaCE Website", featured:true },
-  { id:"C2", credentialType:"Microcredential", level:"Certificate", format:"Online", term:"Self-paced",
-    school:"Massry School of Business", dept:"Information Systems & Business Analytics",
-    code:"", title:"Artificial Intelligence for Business",
-    description:"For-credit graduate microcredential covering AI strategy, automation, and data-driven decision-making. Courses stack toward an MBA or relevant graduate degree.",
-    credits:9, instructor:"Massry School faculty", prereqs:"Graduate standing or instructor permission",
-    sourceUrl:"https://www.albany.edu/academics/microcredentials/ai-for-business",
-    source:"PaCE Website", featured:true },
-
-  // ── D. EXTERNAL CERTIFICATES ──
-  { id:"D1", credentialType:"External Certificate", level:"Certificate", format:"Online", term:"Self-paced",
-    school:"College of Arts & Sciences", dept:"Google",
-    code:"", title:"Google AI Essentials",
-    description:"Free, self-paced certificate introducing practical AI tools and responsible workflows. Available free to all SUNY students, faculty, and staff.",
-    credits:null, instructor:"Google", prereqs:"SUNY affiliation required", isFree:true, offeredBy:"Google",
-    sourceUrl:"https://www.suny.edu/google/ai-certificate/",
-    source:"SUNY\u2013Google Partnership", featured:true },
-  { id:"D2", credentialType:"External Certificate", level:"Certificate", format:"Online", term:"Self-paced",
-    school:"College of Arts & Sciences", dept:"Google",
-    code:"", title:"Google Career Certificate: Data Analytics with AI",
-    description:"Free career certificate covering data analytics enhanced with AI-powered tools. Available free through the SUNY\u2013Google partnership.",
-    credits:null, instructor:"Google", prereqs:"SUNY affiliation required", isFree:true, offeredBy:"Google",
-    sourceUrl:"https://www.suny.edu/google/ai-certificate/",
-    source:"SUNY\u2013Google Partnership", featured:true },
-
-  // ── E. FALL 2026 COURSES (from SOC PDF) ──
-  { id:"E1", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Emergency Preparedness, Homeland Security and Cybersecurity (CEHC)", dept:"Informatics",
-    code:"CINF 135", title:"Concepts of Artificial Intelligence",
-    description:"Foundational AI concepts including machine learning, NLP, computer vision, and ethical dimensions of AI deployment. No programming prerequisite.",
-    credits:3, instructor:"Dr. M. Abdullah Canbaz", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E2", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Arts & Sciences", dept:"Philosophy",
-    code:"APHI 213", title:"Ethics and Philosophy of AI",
-    description:"Explores ethical, social, and philosophical questions raised by Artificial Intelligence, including bias, autonomy, surveillance, and accountability.",
-    credits:3, instructor:"TBA", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E3", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Arts & Sciences", dept:"Economics",
-    code:"AECO 372W", title:"AI for Business and Economics",
-    description:"Applications of Artificial Intelligence in business and economic analysis, with emphasis on writing-intensive research.",
-    credits:3, instructor:"Dr. Chun-Yu Ho", prereqs:"See department",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E4", credentialType:"Degree Course", level:"Graduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Arts & Sciences", dept:"Mathematics & Statistics",
-    code:"AMAT 592", title:"Machine Learning",
-    description:"Graduate-level machine learning covering supervised, unsupervised, and statistical learning methods. Restricted to DAT-MS and Mathematics students.",
-    credits:3, instructor:"Dr. Jihun Han / Dr. Felix Ye", prereqs:"Graduate standing in DAT-MS or Math",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E5", credentialType:"Degree Course", level:"Graduate", format:"Online",
-    term:"Fall 2026", school:"Massry School of Business", dept:"AI for Business",
-    code:"BAIB 620", title:"Generative AI and Large Language Models",
-    description:"Graduate course on generative AI systems, large language models, and their applications in business contexts.",
-    credits:3, instructor:"TBA", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E6", credentialType:"Degree Course", level:"Graduate", format:"In-Person",
-    term:"Fall 2026", school:"Massry School of Business", dept:"AI for Business",
-    code:"BAIB 630", title:"Swarm Intelligence",
-    description:"Graduate course covering swarm intelligence algorithms, multi-agent systems, and collective AI behavior applied to business optimization.",
-    credits:3, instructor:"TBA", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E7", credentialType:"Degree Course", level:"Graduate", format:"Hybrid",
-    term:"Fall 2026", school:"Massry School of Business", dept:"Digital Forensics",
-    code:"BFOR 515", title:"Tools for AI and Data Analytics",
-    description:"Graduate introduction to AI and data analytics tools, combining synchronous online and in-person instruction.",
-    credits:3, instructor:"Srishti Gupta", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E8", credentialType:"Degree Course", level:"Undergraduate", format:"Online",
-    term:"Fall 2026", school:"College of Emergency Preparedness, Homeland Security and Cybersecurity (CEHC)", dept:"Informatics",
-    code:"CINF 221", title:"AI Governance in Action",
-    description:"Examines AI governance frameworks, policy implementation, and accountability structures in public and private sectors.",
-    credits:3, instructor:"Emrah Tanyildizi", prereqs:"See department",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E9", credentialType:"Degree Course", level:"Undergraduate", format:"Online",
-    term:"Fall 2026", school:"School of Education", dept:"Educational Theory & Practice",
-    code:"ETAP 431", title:"AI in the Classroom",
-    description:"How AI tools reshape teaching and learning \u2014 covering ethical use, algorithmic bias in EdTech, and classroom integration strategies.",
-    credits:3, instructor:"Jason Vickers", prereqs:"See department",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E10", credentialType:"Degree Course", level:"Graduate", format:"Online",
-    term:"Fall 2026", school:"School of Education", dept:"Educational Theory & Practice",
-    code:"ETAP 531", title:"AI in the Classroom",
-    description:"Graduate section. How AI tools reshape teaching and learning \u2014 covering ethical use, algorithmic bias in EdTech, and classroom integration strategies.",
-    credits:3, instructor:"Jason Vickers", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E11", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Computer Science",
-    code:"ICSI 235", title:"Artificial Intelligence",
-    description:"Undergraduate introduction to AI: search, knowledge representation, reasoning, planning, and introductory machine learning.",
-    credits:3, instructor:"Dr. Xin Li", prereqs:"ICSI 210 or equivalent",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E12", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Computer Science",
-    code:"ICSI 435", title:"Artificial Intelligence",
-    description:"Upper-division AI covering advanced search, game playing, constraint satisfaction, probabilistic reasoning, and machine learning foundations.",
-    credits:3, instructor:"Dr. Haoyu Wang", prereqs:"ICSI 235 or equivalent",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E13", credentialType:"Degree Course", level:"Graduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Computer Science",
-    code:"ICSI 535", title:"Artificial Intelligence",
-    description:"Graduate section. Advanced AI covering search, game playing, constraint satisfaction, probabilistic reasoning, and machine learning.",
-    credits:3, instructor:"Dr. Haoyu Wang", prereqs:"Graduate standing; ICSI 435 or equivalent",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E14", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Computer Science",
-    code:"ICSI 436", title:"Machine Learning",
-    description:"Upper-division course on supervised and unsupervised learning, neural networks, model evaluation, and real-world ML applications.",
-    credits:3, instructor:"Dr. Chong Liu", prereqs:"ICSI 235 or equivalent",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E15", credentialType:"Degree Course", level:"Graduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Computer Science",
-    code:"ICSI 536", title:"Machine Learning",
-    description:"Graduate section. Supervised and unsupervised learning, neural networks, model evaluation, and real-world ML applications.",
-    credits:3, instructor:"Dr. Chong Liu", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E16", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Electrical & Computer Engineering",
-    code:"IECE 466", title:"Deep Learning",
-    description:"Undergraduate deep learning covering neural network architectures, training methods, CNNs, RNNs, transformers, and applications.",
-    credits:3, instructor:"Dr. Saurabh Sihag", prereqs:"See department",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-  { id:"E17", credentialType:"Degree Course", level:"Graduate", format:"In-Person",
-    term:"Fall 2026", school:"College of Nanotechnology, Science, and Engineering (CNSE)", dept:"Electrical & Computer Engineering",
-    code:"IECE 566", title:"Deep Learning",
-    description:"Graduate section. Deep neural network architectures, training methods, CNNs, RNNs, transformers, and advanced applications.",
-    credits:3, instructor:"Dr. Saurabh Sihag", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Fall 2026", featured:false },
-
-  // ── F. SUMMER 2026 COURSES ──
-  { id:"F1", credentialType:"Degree Course", level:"Undergraduate", format:"Online",
-    term:"Summer 2026", school:"College of Emergency Preparedness, Homeland Security and Cybersecurity (CEHC)", dept:"Informatics",
-    code:"CINF 135", title:"Concepts of Artificial Intelligence",
-    description:"Foundational AI concepts including machine learning, NLP, computer vision, and ethical dimensions. Online asynchronous format for summer session.",
-    credits:3, instructor:"TBA", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Summer 2026", featured:false },
-  { id:"F2", credentialType:"Degree Course", level:"Undergraduate", format:"Online",
-    term:"Summer 2026", school:"College of Arts & Sciences", dept:"Philosophy",
-    code:"APHI 213", title:"Ethics and Philosophy of AI",
-    description:"Ethical, social, and philosophical questions raised by Artificial Intelligence. Online asynchronous format for summer session.",
-    credits:3, instructor:"TBA", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Summer 2026", featured:false },
-  { id:"F3", credentialType:"Degree Course", level:"Graduate", format:"Online",
-    term:"Summer 2026", school:"College of Arts & Sciences", dept:"Mathematics & Statistics",
-    code:"AMAT 592", title:"Machine Learning",
-    description:"Graduate machine learning, online asynchronous format. Restricted to DAT-MS students for summer session.",
-    credits:3, instructor:"Dr. Yunlong Feng", prereqs:"DAT-MS standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Summer 2026", featured:false },
-  { id:"F4", credentialType:"Degree Course", level:"Graduate", format:"Online",
-    term:"Summer 2026", school:"School of Education", dept:"Educational Theory & Practice",
-    code:"ETAP 608", title:"AI Literacy and Ethics",
-    description:"Graduate course on AI literacy for educators \u2014 covering responsible adoption, ethical frameworks, and instructional applications of AI tools.",
-    credits:3, instructor:"Dr. Haesol Bae", prereqs:"Graduate standing",
-    sourceUrl:"https://www.albany.edu/registrar/schedule-classes",
-    source:"Schedule of Classes \u2014 Summer 2026", featured:false },
-
-  // ── G. BULLETIN-ONLY (not scheduled 2026) ──
-  { id:"G1", credentialType:"Degree Course", level:"Undergraduate", format:"In-Person",
-    term:"Other", school:"College of Arts & Sciences", dept:"AI & Society College",
-    code:"UUNI 118", title:"Introduction to Artificial Intelligence",
-    description:"One-credit interdisciplinary course covering AI fundamentals, societal implications, and ethical considerations. Not currently scheduled for 2026.",
-    credits:1, instructor:"AI & Society Dissertation Fellows", prereqs:"None",
-    sourceUrl:"https://www.albany.edu/undergraduate-bulletin/faculty-initiated-interdisciplinary-courses.php",
-    source:"Undergraduate Bulletin", featured:false },
-  { id:"G2", credentialType:"Degree Course", level:"Undergraduate", format:"TBD",
-    term:"Other", school:"College of Arts & Sciences", dept:"Philosophy",
-    code:"APHI 380", title:"AI in Society: Ethical and Legal Issues",
-    description:"Signature course of the new Ethics & Philosophy of AI minor. Covers ethical and legal dimensions of AI in society. Not yet scheduled; announced January 2026.",
-    credits:3, instructor:"Philosophy Department", prereqs:"See department",
-    sourceUrl:"https://www.albany.edu/news-center/news/2026-ualbany-launches-minor-ethics-and-philosophy-artificial-intelligence",
-    source:"News Center (Jan 2026)", featured:false },
-];
 
 /* ── Filter options ── */
 const CRED_TYPES = ["Degree Course","Degree Program","Academic Minor","Microcredential","External Certificate"];
@@ -618,14 +395,14 @@ function FilterGroup({ label, options, selected, onChange }) {
 }
 
 /* ── Detail Modal ── */
-function DetailModal({ item, onClose }) {
+function DetailModal({ item, onClose, catalog }) {
   useEffect(() => {
     const h = e => { if (e.key === "Escape") onClose(); };
     document.addEventListener("keydown", h);
     return () => document.removeEventListener("keydown", h);
   }, [onClose]);
 
-  const related = CATALOG.filter(c => c.id !== item.id && c.school === item.school).slice(0, 3);
+  const related = catalog.filter(c => c.id !== item.id && c.school === item.school).slice(0, 3);
 
   return (
     <div className="overlay" onClick={onClose}>
@@ -681,7 +458,7 @@ function DetailModal({ item, onClose }) {
 /* ══════════════════════════════════════════════════
    COURSES PAGE
 ══════════════════════════════════════════════════ */
-function CoursesPage() {
+function CoursesPage({ catalog }) {
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState(null);
   const [filters, setFilters] = useState({ cred: [], level: [], term: [], format: [], school: [] });
@@ -690,7 +467,7 @@ function CoursesPage() {
   const activeCount = Object.values(filters).flat().length;
 
   const filtered = useMemo(() => {
-    return CATALOG.filter(c => {
+    return catalog.filter(c => {
       const lo = q.toLowerCase();
       const matchQ = !q || c.title.toLowerCase().includes(lo) || c.code.toLowerCase().includes(lo) ||
         c.description.toLowerCase().includes(lo) || c.dept.toLowerCase().includes(lo) || c.school.toLowerCase().includes(lo);
@@ -701,7 +478,7 @@ function CoursesPage() {
       const matchSchool = !filters.school.length || filters.school.includes(c.school);
       return matchQ && matchCred && matchLevel && matchTerm && matchFormat && matchSchool;
     });
-  }, [q, filters]);
+  }, [q, filters, catalog]);
 
   return (
     <>
@@ -776,7 +553,7 @@ function CoursesPage() {
         </main>
       </div>
 
-      {selected && <DetailModal item={selected} onClose={() => setSelected(null)} />}
+      {selected && <DetailModal item={selected} onClose={() => setSelected(null)} catalog={catalog} />}
     </>
   );
 }
@@ -1152,6 +929,14 @@ function AboutPage({ goTo }) {
 ══════════════════════════════════════════════════ */
 export default function App() {
   const [page, setPage] = useState("courses");
+  const [catalog, setCatalog] = useState([]);
+
+  useEffect(() => {
+    fetch("/courses.json")
+      .then(r => r.json())
+      .then(data => setCatalog(data))
+      .catch(err => console.error("Failed to load courses.json:", err));
+  }, []);
 
   function goTo(p) {
     setPage(p);
@@ -1179,7 +964,7 @@ export default function App() {
         </header>
 
         <main style={{flex:1}}>
-          {page === "courses" && <CoursesPage />}
+          {page === "courses" && <CoursesPage catalog={catalog} />}
           {page === "about" && <AboutPage goTo={goTo} />}
         </main>
 
