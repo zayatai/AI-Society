@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
 
-/* ── Filter options ── */
 const CRED_TYPES = ["Degree Course","Degree Program","Academic Minor","Microcredential","External Certificate"];
 const LEVELS = ["Undergraduate","Graduate","Certificate"];
 const TERMS = ["Fall","Spring","Summer","Self-paced","Other"];
@@ -39,7 +38,7 @@ const CSS = `
   --text:#1f1b24;--muted:#645b70;--border:#e3dceb;
   --shadow:0 10px 28px rgba(49,31,74,0.08);
   --shadow-sm:0 2px 8px rgba(49,31,74,0.06);
-  --radius:18px;--radius-sm:14px;--radius-pill:999px;
+  --radius:18px;--radius-sm:14px;
   --container:1120px;
   --ds:'DM Serif Display',Georgia,serif;
   --font:'Inter',system-ui,-apple-system,sans-serif;
@@ -108,18 +107,11 @@ a{color:inherit;text-decoration:none}
 .v-btn.on{background:var(--pu);color:#fff}
 
 .badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:0.7rem;font-weight:600;white-space:nowrap;letter-spacing:.01em}
-.badge-dc  {background:#ede5f8;color:#46166b}
-.badge-mc  {background:#fdf6de;color:#8a6508}
-.badge-ec  {background:#e3f2eb;color:#14653c}
-.badge-cert{background:#e8f0fe;color:#1a47b0}
-.badge-ug  {background:#e3ebf9;color:#1540a8}
-.badge-gr  {background:#ede5f8;color:#46166b}
-.badge-free{background:#d2f4e3;color:#0b5e31;border:1px solid #9de3bf}
-.badge-prov{background:#e8f0fe;color:#1a47b0}
-.badge-inp {background:#e3f2eb;color:#14653c}
-.badge-onl {background:#e3ebf9;color:#1540a8}
-.badge-hyb {background:#fff3e0;color:#a05010}
-.badge-def {background:#eeedf4;color:#5a5475}
+.badge-dc{background:#ede5f8;color:#46166b}.badge-mc{background:#fdf6de;color:#8a6508}.badge-ec{background:#e3f2eb;color:#14653c}
+.badge-cert{background:#e8f0fe;color:#1a47b0}.badge-ug{background:#e3ebf9;color:#1540a8}.badge-gr{background:#ede5f8;color:#46166b}
+.badge-free{background:#d2f4e3;color:#0b5e31;border:1px solid #9de3bf}.badge-prov{background:#e8f0fe;color:#1a47b0}
+.badge-inp{background:#e3f2eb;color:#14653c}.badge-onl{background:#e3ebf9;color:#1540a8}.badge-hyb{background:#fff3e0;color:#a05010}
+.badge-def{background:#eeedf4;color:#5a5475}
 
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all 0.18s ease;cursor:pointer}
 .card:hover{transform:translateY(-2px);border-color:rgba(198,146,20,.4);box-shadow:var(--shadow-sm)}
@@ -167,66 +159,96 @@ a{color:inherit;text-decoration:none}
 .btn-gold{background:var(--go);color:#1a1a1a}.btn-gold:hover{background:var(--gol)}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-ghost:hover{border-color:var(--pu);color:var(--pu)}
 .btn-free{background:var(--grn);color:#fff}.btn-free:hover{background:#0d5230}
+.btn-li{background:#0077b5;color:#fff}.btn-li:hover{background:#005e8e}
 
+/* POLICY PAGE */
+.policy-wrap{width:min(var(--container),calc(100% - 2rem));margin:0 auto;padding:2rem 0 3rem}
+.policy-tool-frame{border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2.5rem;background:var(--surface)}
+.policy-tool-label{padding:0.6rem 1rem;background:var(--pud);font-size:0.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:space-between}
+.policy-tool-label a{color:var(--go);font-size:0.7rem;font-weight:600;text-decoration:underline}
+.policy-tool-frame iframe{width:100%;height:520px;border:none;display:block}
+.policy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.policy-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.4rem 1.5rem 1.4rem 1.75rem;transition:all 0.18s;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:0.5rem;border-left-width:4px}
+.policy-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.pc-purple{border-left-color:#46166b}
+.pc-gold  {border-left-color:#C69214}
+.pc-green {border-left-color:#14653c}
+.pc-blue  {border-left-color:#1540a8}
+.pc-red   {border-left-color:#a32d2d}
+.pc-teal  {border-left-color:#0e7490}
+.policy-card-icon{font-size:1.4rem}
+.policy-card-title{font-size:0.95rem;font-weight:700;color:var(--text)}
+.policy-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.65;flex:1}
+.policy-card-meta{font-size:0.68rem;color:#b0a8c0}
+
+/* ABOUT PAGE */
 .about-page{min-height:calc(100vh - 180px)}
 .about-hero{background:var(--ch2);padding:2.75rem 1.5rem 2.25rem;position:relative}
 .about-hero::after{content:'';position:absolute;bottom:0;left:1.5rem;width:56px;height:2px;background:var(--go)}
-.about-hero-inner{max-width:760px;margin:0 auto}
+.about-hero-inner{max-width:900px;margin:0 auto}
 .about-hero-kicker{display:block;font-size:0.68rem;font-weight:700;color:var(--go);letter-spacing:.16em;margin-bottom:0.5rem;text-transform:uppercase}
 .about-hero-title{font-family:var(--ds);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;color:#fff;line-height:1.12;margin:0 0 0.4rem;letter-spacing:-.02em}
 .about-hero-sub{font-size:0.86rem;color:rgba(255,255,255,.38);line-height:1.65;max-width:520px;margin:0;font-weight:300}
 .about-tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:56px;z-index:10}
-.about-tabs-inner{max-width:760px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0;overflow-x:auto}
-.about-tab{background:none;border:none;border-bottom:2px solid transparent;padding:0.7rem 0.9rem;margin-bottom:-1px;font-size:0.82rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all 0.15s}
+.about-tabs-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0;overflow-x:auto}
+.about-tab{background:none;border:none;border-bottom:2px solid transparent;padding:0.7rem 1rem;margin-bottom:-1px;font-size:0.82rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all 0.15s}
 .about-tab:hover{color:var(--text)}
 .about-tab.active{color:var(--pu);border-bottom-color:var(--go);font-weight:600}
-.about-content{max-width:760px;margin:0 auto;padding:1.75rem 1.5rem 3rem}
-.about-section{margin-bottom:1.75rem}
-.about-sh{font-size:1.05rem;font-weight:700;color:var(--text);margin:0 0 0.7rem}
-.about-p{font-size:0.87rem;color:var(--muted);line-height:1.82;margin:0 0 0.55rem}
+.about-content{max-width:900px;margin:0 auto;padding:2rem 1.5rem 3rem}
+.about-section{margin-bottom:2rem}
+.about-sh{font-family:var(--ds);font-size:1.2rem;color:var(--text);margin:0 0 0.75rem;letter-spacing:-.01em}
+.about-p{font-size:0.88rem;color:var(--muted);line-height:1.82;margin:0 0 0.6rem}
 .about-p a{color:var(--pu);font-weight:600}.about-p a:hover{text-decoration:underline}
 .about-p strong{color:var(--text)}
-.about-callout{background:var(--surface-muted);border:1px solid var(--border);border-left:3px solid var(--pu);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:1.5rem}
-.about-callout p{font-size:0.82rem;color:var(--muted);line-height:1.7;margin:0 0 0.4rem}
-.about-callout p:last-child{margin-bottom:0}
-.about-callout a{color:var(--pu);font-weight:600}
-.about-fellow{background:var(--puxl);border:1px solid var(--pul);border-left:3px solid var(--pu);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-bottom:1.5rem}
-.about-fellow p{font-size:0.84rem;color:var(--text);line-height:1.78;margin:0}
-.person-grid{display:grid;grid-template-columns:1fr;gap:0.65rem}
-.person-card{display:flex;gap:0.85rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.95rem 1.1rem;transition:border-color 0.15s}
-.person-card:hover{border-color:rgba(70,22,107,0.25)}
-.person-av{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:var(--pu);color:#fff;font-weight:700;font-size:0.75rem;display:flex;align-items:center;justify-content:center}
-.person-av.grad{background:linear-gradient(135deg,var(--pu),#8a3cc0)}
-.person-name{font-size:0.88rem;font-weight:600;color:var(--text)}
-.person-role{font-size:0.75rem;color:var(--pu);font-weight:600;margin-top:1px}
-.person-dept{font-size:0.73rem;color:var(--muted);margin-top:2px;line-height:1.45}
-.person-bio{font-size:0.78rem;color:var(--muted);line-height:1.65;margin-top:0.38rem}
-.opp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.95rem 1.1rem;margin-bottom:0.6rem}
-.opp-card h3{font-size:0.88rem;font-weight:600;color:var(--text);margin:0 0 0.3rem}
-.opp-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;margin:0}
+.about-photo{width:100%;border-radius:var(--radius-sm);object-fit:cover;display:block;margin:1rem 0 1.5rem;max-height:280px}
 
+/* PERSON GRID */
+.section-label{font-size:0.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--go);margin:0 0 0.75rem;display:block}
+.person-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
+.person-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:0.85rem;margin-bottom:1.5rem}
+.person-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;margin-bottom:1.5rem}
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:border-color 0.15s;display:flex;flex-direction:column}
+.pcard:hover{border-color:rgba(70,22,107,0.3);box-shadow:var(--shadow-sm)}
+.pcard-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;display:block;background:var(--pul)}
+.pcard-photo-placeholder{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,var(--pu),#8a3cc0);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:#fff}
+.pcard-body{padding:0.75rem 0.85rem;flex:1;display:flex;flex-direction:column;gap:0.15rem}
+.pcard-name{font-size:0.82rem;font-weight:700;color:var(--text);line-height:1.3}
+.pcard-role{font-size:0.72rem;color:var(--pu);font-weight:600;line-height:1.3}
+.pcard-dept{font-size:0.68rem;color:var(--muted);line-height:1.4;margin-top:0.1rem}
+.pcard-bio{font-size:0.72rem;color:var(--muted);line-height:1.55;margin-top:0.35rem}
+.pcard-link{font-size:0.72rem;color:var(--pu);font-weight:600;margin-top:auto;padding-top:0.4rem;text-decoration:none}
+.pcard-link:hover{text-decoration:underline}
+
+/* FELLOWSHIP CLEAN TEXT */
+.fellow-type{margin-bottom:1.75rem}
+.fellow-type-title{font-family:var(--ds);font-size:1.05rem;color:var(--text);margin:0 0 0.2rem}
+.fellow-type-desc{font-size:0.84rem;color:var(--muted);line-height:1.75;margin:0 0 1rem}
+.fellow-divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
+
+/* FOOTER */
 .site-footer{border-top:2px solid var(--go);background:var(--ch2);margin-top:auto}
 .footer-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.9rem 0;font-size:0.72rem;color:rgba(255,255,255,.3);flex-wrap:wrap}
 .footer-inner a{color:rgba(255,255,255,.45);font-weight:600}
-.footer-credit{padding-bottom:0.5rem;font-size:0.63rem;color:rgba(255,255,255,.18)}
+.footer-credit{padding-bottom:0.5rem;font-size:0.63rem;color:rgba(255,255,255,.22)}
 
 .empty{text-align:center;padding:3rem 1.5rem;color:var(--muted)}
 .empty-icon{font-size:2rem;margin-bottom:0.75rem}
 .empty p{font-size:0.88rem;max-width:340px;margin:0 auto;line-height:1.65}
 
 @media(max-width:960px){
-  .catalog-layout{grid-template-columns:1fr}
-  .sidebar{position:static}
-  .gc-grid{grid-template-columns:1fr}
+  .catalog-layout{grid-template-columns:1fr}.sidebar{position:static}
+  .gc-grid,.policy-grid{grid-template-columns:1fr}
   .modal-grid{grid-template-columns:1fr}
+  .person-grid-5,.person-grid-4{grid-template-columns:repeat(2,1fr)}
+  .person-grid-2{grid-template-columns:1fr}
   .footer-inner{flex-direction:column;align-items:flex-start}
 }
 `;
 
 const credBadge = t => ({"Degree Course":"badge-dc","Microcredential":"badge-mc","External Certificate":"badge-ec","Degree Program":"badge-cert","Academic Minor":"badge-def"}[t]||"badge-def");
 const levelBadge = l => ({"Undergraduate":"badge-ug","Graduate":"badge-gr","Certificate":"badge-cert"}[l]||"badge-def");
-const fmtBadge = f => ({"In-Person":"badge-inp","Online":"badge-onl","Hybrid":"badge-hyb"}[f]||"badge-def");
-const topColor = t => ({"Degree Course":"var(--pu)","Microcredential":"var(--go)","External Certificate":"var(--grn)","Degree Program":"#1540a8","Academic Minor":"#a05010"}[t]||"var(--border)");
+const fmtBadge  = f => ({"In-Person":"badge-inp","Online":"badge-onl","Hybrid":"badge-hyb"}[f]||"badge-def");
+const topColor  = t => ({"Degree Course":"var(--pu)","Microcredential":"var(--go)","External Certificate":"var(--grn)","Degree Program":"#1540a8","Academic Minor":"#a05010"}[t]||"var(--border)");
 
 function FilterGroup({ label, options, selected, onChange }) {
   const [open, setOpen] = useState(true);
@@ -309,19 +331,20 @@ function DetailModal({ item, onClose, catalog }) {
   );
 }
 
+/* ══ COURSES PAGE — untouched ══ */
 function CoursesPage({ catalog }) {
   const [q, setQ] = useState("");
   const [view, setView] = useState("grid");
   const [activeChip, setActiveChip] = useState(null);
   const [selected, setSelected] = useState(null);
-  const [filters, setFilters] = useState({ cred:[], level:[], term:[], format:[], school:[], topic:[] });
+  const [filters, setFilters] = useState({ cred:[],level:[],term:[],format:[],school:[],topic:[] });
   const setF = (key, val) => setFilters(prev => ({ ...prev, [key]: val }));
-  const clearAll = () => { setFilters({ cred:[], level:[], term:[], format:[], school:[], topic:[] }); setActiveChip(null); setQ(""); };
+  const clearAll = () => { setFilters({ cred:[],level:[],term:[],format:[],school:[],topic:[] }); setActiveChip(null); setQ(""); };
   const activeCount = Object.values(filters).flat().length;
 
   function handleChip(label) {
-    if (activeChip === label) { setActiveChip(null); setQ(""); }
-    else { setActiveChip(label); setQ(""); setFilters(prev => ({ ...prev, topic: [label] })); }
+    if (activeChip === label) { setActiveChip(null); setFilters(prev=>({...prev,topic:[]})); }
+    else { setActiveChip(label); setFilters(prev => ({ ...prev, topic: [label] })); }
   }
 
   const filtered = useMemo(() => catalog.filter(c => {
@@ -333,7 +356,7 @@ function CoursesPage({ catalog }) {
     const matchTerm   = !filters.term.length   || filters.term.includes(c.term);
     const matchFormat = !filters.format.length || filters.format.some(f => (c.format||"").includes(f));
     const matchSchool = !filters.school.length || filters.school.includes(c.school);
-    const matchTopic  = !filters.topic || !filters.topic.length || (c.tags||[]).some(t => filters.topic.includes(t));
+    const matchTopic  = !filters.topic.length  || (c.tags||[]).some(t => filters.topic.includes(t));
     return matchQ && matchCred && matchLevel && matchTerm && matchFormat && matchSchool && matchTopic;
   }), [q, filters, catalog]);
 
@@ -348,14 +371,12 @@ function CoursesPage({ catalog }) {
             value={q} onChange={e => { setQ(e.target.value); setActiveChip(null); }} aria-label="Search courses" />
         </div>
       </div>
-
       <div className="tbar">
         <div className="tbar-inner">
           <span>31 verified listings &middot; Last updated April 2026</span>
           <button className="tbar-btn">Suggest an update</button>
         </div>
       </div>
-
       <div className="chips-wrap">
         <div className="chips-row">
           <span className="chips-label">Popular:</span>
@@ -364,7 +385,6 @@ function CoursesPage({ catalog }) {
           ))}
         </div>
       </div>
-
       <div className="catalog-layout">
         <aside className="sidebar">
           <div className="sidebar-header">
@@ -377,7 +397,6 @@ function CoursesPage({ catalog }) {
           <FilterGroup label="Format"          options={FORMATS}     selected={filters.format} onChange={v => setF("format", v)} />
           <FilterGroup label="School"          options={ALL_SCHOOLS} selected={filters.school} onChange={v => setF("school", v)} />
         </aside>
-
         <main className="results">
           <div className="results-bar">
             <span className="results-count">{filtered.length} result{filtered.length !== 1 ? "s" : ""}</span>
@@ -386,11 +405,7 @@ function CoursesPage({ catalog }) {
               <button className={`v-btn${view === "grid" ? " on" : ""}`} onClick={() => setView("grid")} title="Grid">&#8862;</button>
             </div>
           </div>
-
-          {filtered.length === 0 && (
-            <div className="empty"><div className="empty-icon">&#128269;</div><p>No results match your filters. Try adjusting or clearing filters.</p></div>
-          )}
-
+          {filtered.length === 0 && <div className="empty"><div className="empty-icon">&#128269;</div><p>No results match your filters.</p></div>}
           {view === "list" && filtered.map(c => (
             <div key={c.id} className="card" onClick={() => setSelected(c)}>
               <div className="card-body">
@@ -414,7 +429,6 @@ function CoursesPage({ catalog }) {
               </div>
             </div>
           ))}
-
           {view === "grid" && (
             <div className="gc-grid">
               {filtered.map(c => (
@@ -446,19 +460,124 @@ function CoursesPage({ catalog }) {
   );
 }
 
-const ABOUT_TABS = ["About","Leadership","Advisory Board","Fellowships","Opportunities"];
+/* ══ AI POLICY PAGE ══ */
+function PolicyPage() {
+  const policies = [
+    { icon:"📋", title:"Academic Integrity & AI Use Policy",
+      desc:"Official UAlbany guidance on using AI tools in coursework, assessments, and research — covering citation, disclosure, and clear boundaries for students and instructors.",
+      updated:"Aug 2025", source:"Office of Academic Affairs",
+      url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-purple" },
+    { icon:"🛠", title:"CATLOE Teaching Resources for AI",
+      desc:"Practical guides from the Center for Advancement of Teaching, Learning & Online Education for instructors at every level of AI familiarity.",
+      updated:"Sep 2025", source:"CATLOE",
+      url:"https://www.albany.edu/teaching-and-learning/teaching-resources", color:"pc-gold" },
+    { icon:"📚", title:"University Libraries: Generative AI Guide",
+      desc:"Curated research guide on generative AI and academic integrity, plus citation tools, AI literacy resources, and library support.",
+      updated:"Aug 2025", source:"University Libraries",
+      url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-green" },
+    { icon:"🔒", title:"Data Privacy & AI Platforms",
+      desc:"Requirements for data handling when using AI tools — FERPA compliance, prohibited data categories, approved vendor list, and reporting obligations.",
+      updated:"Jul 2025", source:"Information Security Office",
+      url:"https://wiki.albany.edu/display/public/askit/Internet+Privacy+Policy", color:"pc-blue" },
+    { icon:"⚖️", title:"UAlbany Responsible AI Principles",
+      desc:"Institutional framework for ethical, transparent, and equitable AI — covering trustworthiness, accountability, and inclusive design commitments.",
+      updated:"Jun 2025", source:"Provost's Office",
+      url:"https://www.albany.edu/provost", color:"pc-red" },
+    { icon:"🎓", title:"Student FAQ: AI in the Classroom",
+      desc:"Can I use ChatGPT? How do I cite AI? What are the academic integrity consequences? Answers to the most common student questions.",
+      updated:"Sep 2025", source:"Dean of Students",
+      url:"https://www.albany.edu/dean-of-students", color:"pc-teal" },
+  ];
 
-function AboutPage({ goTo }) {
+  return (
+    <>
+      <div className="page-header">
+        <div className="container">
+          <span className="eyebrow">AI &amp; Society College &middot; University at Albany</span>
+          <h1 className="page-title">AI Policy &amp; Resources</h1>
+          <p className="page-subtitle">Official UAlbany guidelines, governance frameworks, and tools for AI use across campus</p>
+        </div>
+      </div>
+      <div className="tbar">
+        <div className="tbar-inner">
+          <span>Last updated April 2026</span>
+          <button className="tbar-btn">Suggest an update</button>
+        </div>
+      </div>
+      <div className="policy-wrap">
+        {/* Kalonji's tool embedded as iframe */}
+        <div className="policy-tool-frame">
+          <div className="policy-tool-label">
+            <span>🤖 AI Syllabus &amp; Policy Generator — Built by Kalonji Samuel, AI &amp; Society Fellow</span>
+            <a href="https://kalonjis914.github.io/AI-Syllabus-Engine/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          </div>
+          <iframe
+            src="https://kalonjis914.github.io/AI-Syllabus-Engine/"
+            title="AI Syllabus Engine"
+            allow="clipboard-write"
+          />
+        </div>
+
+        {/* Policy cards */}
+        <div className="policy-grid">
+          {policies.map((p, i) => (
+            <div key={i} className={`policy-card ${p.color}`}>
+              <div className="policy-card-icon">{p.icon}</div>
+              <div className="policy-card-title">{p.title}</div>
+              <p className="policy-card-desc">{p.desc}</p>
+              <div className="policy-card-meta">Source: {p.source} &middot; Updated: {p.updated}</div>
+              <div style={{marginTop:"0.75rem"}}>
+                <a className="btn btn-ghost" href={p.url} target="_blank" rel="noopener noreferrer"
+                  style={{fontSize:"0.76rem",padding:"0.4rem 0.85rem"}}>
+                  Read policy &#8594;
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ══ PERSON CARD ══ */
+function PersonCard({ name, role, dept, photo, url, bio }) {
+  const [imgErr, setImgErr] = useState(false);
+  const initials = name.split(" ").map(w=>w[0]).join("").slice(0,2);
+  return (
+    <div className="pcard">
+      {photo && !imgErr
+        ? <img className="pcard-photo" src={photo} alt={name} onError={() => setImgErr(true)} />
+        : <div className="pcard-photo-placeholder">{initials}</div>
+      }
+      <div className="pcard-body">
+        <div className="pcard-name">{name}</div>
+        <div className="pcard-role">{role}</div>
+        {dept && <div className="pcard-dept">{dept}</div>}
+        {bio && <div className="pcard-bio">{bio}</div>}
+        {url && <a className="pcard-link" href={url} target="_blank" rel="noopener noreferrer">Profile &#8594;</a>}
+      </div>
+    </div>
+  );
+}
+
+/* ══ ABOUT PAGE ══ */
+const ABOUT_TABS = ["About","Leadership","Fellowships"];
+const BASE = "https://www.albany.edu/sites/default/files/styles/person_list/public/";
+
+function AboutPage() {
   const [tab, setTab] = useState("About");
+
   return (
     <div className="about-page">
       <div className="about-hero">
         <div className="about-hero-inner">
           <span className="about-hero-kicker">AI &amp; Society College &middot; University at Albany</span>
-          <h1 className="about-hero-title">AI Curriculum Navigator</h1>
-          <p className="about-hero-sub">A Centralized Discovery Portal for AI Education</p>
+          <h1 className="about-hero-title">AI &amp; Society College</h1>
+          <p className="about-hero-sub">Founded Spring 2025 &middot; Preparing students, faculty, and staff for a world shaped by AI</p>
         </div>
       </div>
+
       <div className="about-tabs-bar">
         <div className="about-tabs-inner">
           {ABOUT_TABS.map(t => (
@@ -466,181 +585,148 @@ function AboutPage({ goTo }) {
           ))}
         </div>
       </div>
+
       <div className="about-content">
 
+        {/* ── ABOUT TAB ── */}
         {tab === "About" && (<>
-          <div className="about-fellow">
-            <p><strong>Developed by Batzaya (Zaya) Byambasambuu</strong>, Master's Experiential Learning Fellow at the AI &amp; Society College, University at Albany &mdash; as part of the 2025&ndash;2026 fellowship program under the advisorship of Prof. Hany Elgala, Acting Director, AI &amp; Society College.</p>
+          <div className="about-section">
+            <h2 className="about-sh">About the College</h2>
+            <img className="about-photo" src="https://www.albany.edu/sites/default/files/styles/thin_hero/public/ai-teaching-3.jpg" alt="UAlbany AI teaching" />
+            <p className="about-p">Founded in Spring 2025 with a <strong>$2.4 million investment from the State University of New York (SUNY)</strong>, the AI &amp; Society College prepares undergraduate and graduate students, faculty and staff for a world shaped by artificial intelligence.</p>
+            <p className="about-p">With a strong emphasis on trustworthiness, equity, privacy and accountability, the College serves as a catalyst integrating AI education across all nine schools and colleges at the University at Albany.</p>
+            <p className="about-p">The College ensures that every student — whether pursuing a degree in STEM, business, social sciences or the arts — has access to AI-infused learning through cross-disciplinary courses, microcredentials and teaching initiatives.</p>
           </div>
-          <div className="about-callout">
-            <p>AI-related courses and programs are scattered across 9 schools and colleges with no central discovery point. This portal brings them together in one place &mdash; surfacing <strong>31 verified entries</strong> across 7 of 9 UAlbany schools.</p>
-            <p>Missing something? Email <a href="mailto:aisocietycollege@albany.edu">aisocietycollege@albany.edu</a></p>
-          </div>
-          <section className="about-section">
-            <h2 className="about-sh">About the AI &amp; Society College</h2>
-            <p className="about-p">Founded in Spring 2025 with a <strong>$2.4 million investment from SUNY</strong>, the AI &amp; Society College prepares students, faculty and staff for a world shaped by AI &mdash; with emphasis on trustworthiness, equity, privacy and accountability. It integrates AI education across all nine UAlbany schools.</p>
-          </section>
-          <section className="about-section">
+
+          <div className="about-section">
             <h2 className="about-sh">Physical Space &amp; AI Makerspace</h2>
-            <p className="about-p">The College will be housed in <strong>Lecture Center 30 &amp; 31</strong> with GPU workstations in the AI Makerspace, open to all UAlbany community members. Ribbon cutting Spring 2026.</p>
-          </section>
-          <section className="about-section">
-            <h2 className="about-sh">Contact</h2>
-            <p className="about-p">Email: <a href="mailto:aisocietycollege@albany.edu">aisocietycollege@albany.edu</a></p>
-            <p className="about-p"><a href="https://www.albany.edu/ai-plus/ai-society-college" target="_blank" rel="noopener noreferrer">Visit official AI &amp; Society College page &rarr;</a></p>
-          </section>
+            <img className="about-photo" src="https://www.albany.edu/sites/default/files/styles/thin_hero/public/ai-teaching.jpg" alt="UAlbany AI classroom" />
+            <p className="about-p">The College will be housed in <strong>Lecture Center (LC) 30 and LC 31</strong>, designed for collaboration and innovation. Features include individual and group workspaces for fellows, an AI-enabled meeting room for hybrid events, a lounge for informal exchange, and <strong>GPU workstations in the AI Makerspace</strong> open to all UAlbany community members.</p>
+            <p className="about-p">Stay tuned for the <strong>Spring 2026 ribbon cutting ceremony!</strong></p>
+          </div>
+
+          <div className="about-section">
+            <h2 className="about-sh">Contact the College</h2>
+            <p className="about-p"><strong>Campus Community:</strong> Faculty, staff and students are invited to co-create innovative teaching, learning experiences, interdisciplinary programs and ways to promote ethical AI use.</p>
+            <p className="about-p"><strong>Partners Beyond Campus:</strong> The AI &amp; Society College welcomes partnerships with industry, nonprofits, government and philanthropists.</p>
+            <p className="about-p">Contact us at <a href="mailto:aisocietycollege@albany.edu">aisocietycollege@albany.edu</a> or <a href="https://www.linkedin.com/showcase/ai-society-ualbany/" target="_blank" rel="noopener noreferrer">follow us on LinkedIn</a>.</p>
+            <div style={{display:"flex",gap:"0.75rem",flexWrap:"wrap",marginTop:"1rem"}}>
+              <a className="btn btn-primary" href="https://www.albany.edu/ai-plus/ai-society-college" target="_blank" rel="noopener noreferrer">Official College Page &#8594;</a>
+              <a className="btn btn-li" href="https://www.linkedin.com/showcase/ai-society-ualbany/" target="_blank" rel="noopener noreferrer">Follow on LinkedIn</a>
+            </div>
+          </div>
         </>)}
 
+        {/* ── LEADERSHIP TAB ── */}
         {tab === "Leadership" && (<>
-          <section className="about-section">
-            <h2 className="about-sh">College Leadership</h2>
-            <div className="person-grid">
-              <div className="person-card">
-                <div className="person-av">HE</div>
-                <div>
-                  <div className="person-name">Hany Elgala</div>
-                  <div className="person-role">Acting Director, AI &amp; Society College</div>
-                  <div className="person-dept">Associate Professor, Electrical &amp; Computer Engineering, CNSE</div>
-                  <p className="person-bio">Research focuses on visible light communications, LiFi networks, and AI in wireless communications.</p>
-                  <a className="text-link" style={{fontSize:"0.76rem"}} href="https://www.albany.edu/ece/faculty/hany-elgala" target="_blank" rel="noopener noreferrer">View profile &rarr;</a>
-                </div>
-              </div>
-              <div className="person-card">
-                <div className="person-av">MG</div>
-                <div>
-                  <div className="person-name">Mila Gasc&oacute;-Hernandez</div>
-                  <div className="person-role">Acting Associate Director</div>
-                  <div className="person-dept">Associate Professor, Public Administration &amp; Policy, Rockefeller College</div>
-                  <p className="person-bio">Research focuses on digital government, AI governance, and technology policy.</p>
-                  <a className="text-link" style={{fontSize:"0.76rem"}} href="https://www.albany.edu/rockefeller/faculty/mila-gasco-hernandez" target="_blank" rel="noopener noreferrer">View profile &rarr;</a>
-                </div>
-              </div>
+          <div className="about-section">
+            <span className="section-label">Directors</span>
+            <div className="person-grid-2">
+              <PersonCard name="Hany Elgala" role="Acting Director, AI & Society College"
+                dept="Associate Professor, Electrical & Computer Engineering, CNSE"
+                photo={BASE+"2024-09/20240904_Hany_Elgala_IMG_0359.JPG?h=b11ddda9&itok=Q9psqyiw"}
+                url="https://www.albany.edu/ece/faculty/hany-elgala"
+                bio="Research focuses on visible light communications, LiFi networks, and AI in wireless communications." />
+              <PersonCard name="Mila Gascó-Hernandez" role="Acting Associate Director"
+                dept="Associate Professor & Research Director, Center for Technology in Government, Rockefeller College"
+                photo={BASE+"2025-12/Foto%20Mila%20Gasco%20%289%29%20-%20UAlbany.jpg?h=6e0df202&itok=dA0YqEMI"}
+                url="https://www.albany.edu/rockefeller/faculty/mila-gasco-hernandez"
+                bio="Research focuses on digital government, AI governance, and technology policy." />
             </div>
-          </section>
+          </div>
+
+          <div className="about-section">
+            <span className="section-label">Advisory Board — Faculty Representatives (1 of 2)</span>
+            <div className="person-grid-5">
+              <PersonCard name="Marcie Newton" role="Assistant Director & Lecturer II" dept="Writing & Critical Inquiry Program" photo={BASE+"2023-06/Marcie%20Newton.jpg?h=1114f690&itok=i9pTo0Tr"} url="https://www.albany.edu/writing-critical-inquiry/staff-directory/marcie-newton" />
+              <PersonCard name="Rita Biswas" role="Ackner-Newman Endowed Professor, Finance" dept="Massry School of Business" photo={BASE+"2019-10/rita-biswas.jpg?h=4693a17a&itok=i0rqIvoS"} url="https://www.albany.edu/business/faculty/rita-biswas" />
+              <PersonCard name="Alessandra Buccella" role="Assistant Professor" dept="Department of Philosophy" photo={BASE+"2024-09/20240828_Alessandra_Buccella_IMG_0457.JPG?h=d9227b67&itok=RYxbdoAD"} url="https://www.albany.edu/philosophy/faculty/alessandra-buccella" />
+              <PersonCard name="M. Abdullah Canbaz" role="Assistant Professor, IST" dept="CEHC" photo={BASE+"2022-06/M.%20Abdullah-Canbaz.jpg?h=d8638c13&itok=jjGIeqKo"} url="https://www.albany.edu/cehc/faculty/m-abdullah-canbaz" />
+              <PersonCard name="Ming-Ching Chang" role="Associate Professor" dept="Computer Science & ECE, CNSE" photo={BASE+"2016_10_25_Ming-Ching%20Chang_19.jpg?h=82f92a78&itok=aMg_DXr2"} url="https://www.albany.edu/computer-science/faculty/ming-ching-chang" />
+            </div>
+          </div>
+
+          <div className="about-section">
+            <span className="section-label">Advisory Board — Faculty Representatives (2 of 2)</span>
+            <div className="person-grid-5">
+              <PersonCard name="Daniel Goodwin" role="Professor & Department Chair" dept="Art & Art History" photo={BASE+"2023-09/daniel-goodwin.jpg?h=a7e6d17b&itok=hiSzKxk7"} url="https://www.albany.edu/art/faculty/daniel-goodwin" />
+              <PersonCard name="Cecilia Levy" role="Associate Professor" dept="Department of Physics" photo={BASE+"2024-09/20240828_Cecilia_Levy_IMG_0274.JPG?h=0c848498&itok=Jyr-KILx"} url="https://www.albany.edu/physics/faculty/cecilia-levy" />
+              <PersonCard name="Mary Valentis" role="Visiting Associate Professor; CHATS Director" dept="Department of English" photo={BASE+"2023-09/mary-valentis.jpg?h=a7e6d17b&itok=5-4U0YSb"} url="https://www.albany.edu/english/faculty/mary-valentis" />
+              <PersonCard name="Xin Wang" role="Assistant Professor" dept="Epidemiology & Biostatistics, CIHS" photo={BASE+"2023-07/xin_wang.png?h=f1fd4c30&itok=M9MfE9Bz"} url="https://www.albany.edu/cihs/faculty/xin-wang" />
+              <PersonCard name="Jianwei Zhang" role="Professor" dept="Educational Theory & Practice, School of Education" photo={BASE+"2022-08/Zhang-Jianwei.jpg?h=a7052f9c&itok=mLphmk2R"} url="https://www.albany.edu/education/faculty/jianwei-zhang" />
+            </div>
+          </div>
+
+          <div className="about-section">
+            <span className="section-label">Student Representatives</span>
+            <div className="person-grid-2">
+              <PersonCard name="Alana Borrero" role="Undergraduate Student Representative" photo={BASE+"Alana%20Borrero.jpeg?h=cb4297e8&itok=Jbui5LPG"} />
+              <PersonCard name="Shannon Sutorius" role="Graduate Student Representative" photo={BASE+"Shannon%20Sutorius.JPG?h=d5b9011c&itok=EXkyG39J"} />
+            </div>
+          </div>
         </>)}
 
-        {tab === "Advisory Board" && (<>
-          <section className="about-section">
-            <h2 className="about-sh">Faculty Representatives</h2>
-            <div className="person-grid">
-              {[
-                {n:"Marcie Newton",r:"Assistant Director & Lecturer II",d:"Writing & Critical Inquiry Program",u:"https://www.albany.edu/writing-critical-inquiry/staff-directory/marcie-newton"},
-                {n:"Rita Biswas",r:"Ackner-Newman Endowed Professor, Finance",d:"Massry School of Business",u:"https://www.albany.edu/business/faculty/rita-biswas"},
-                {n:"Alessandra Buccella",r:"Assistant Professor",d:"Department of Philosophy",u:"https://www.albany.edu/philosophy/faculty/alessandra-buccella"},
-                {n:"M. Abdullah Canbaz",r:"Assistant Professor, Information Sciences & Technology",d:"CEHC",u:"https://www.albany.edu/cehc/faculty/m-abdullah-canbaz"},
-                {n:"Ming-Ching Chang",r:"Associate Professor",d:"Computer Science & ECE, CNSE",u:"https://www.albany.edu/computer-science/faculty/ming-ching-chang"},
-                {n:"Daniel Goodwin",r:"Professor & Department Chair",d:"Art & Art History",u:"https://www.albany.edu/art/faculty/daniel-goodwin"},
-                {n:"Cecilia Levy",r:"Associate Professor",d:"Department of Physics",u:"https://www.albany.edu/physics/faculty/cecilia-levy"},
-                {n:"Mary Valentis",r:"Visiting Associate Professor; CHATS Director",d:"Department of English",u:"https://www.albany.edu/english/faculty/mary-valentis"},
-                {n:"Xin Wang",r:"Assistant Professor",d:"Epidemiology & Biostatistics, Integrated Health Sciences",u:"https://www.albany.edu/cihs/faculty/xin-wang"},
-                {n:"Jianwei Zhang",r:"Professor",d:"Educational Theory & Practice, School of Education",u:"https://www.albany.edu/education/faculty/jianwei-zhang"},
-              ].map((f,i) => (
-                <div key={i} className="person-card">
-                  <div className="person-av">{f.n.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>
-                  <div>
-                    <div className="person-name">{f.n}</div>
-                    <div className="person-role">{f.r}</div>
-                    <div className="person-dept">{f.d}</div>
-                    <a className="text-link" style={{fontSize:"0.73rem"}} href={f.u} target="_blank" rel="noopener noreferrer">Profile &rarr;</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-          <section className="about-section">
-            <h2 className="about-sh">Student Representatives</h2>
-            <div className="person-grid">
-              {[{n:"Alana Borrero",r:"Undergraduate Student"},{n:"Shannon Sutorius",r:"Graduate Student"}].map((f,i) => (
-                <div key={i} className="person-card">
-                  <div className="person-av grad">{f.n.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>
-                  <div><div className="person-name">{f.n}</div><div className="person-role">{f.r}</div></div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </>)}
-
+        {/* ── FELLOWSHIPS TAB ── */}
         {tab === "Fellowships" && (<>
-          <section className="about-section">
+          <div className="about-section">
             <h2 className="about-sh">Fellowship Programs</h2>
-            <div className="opp-card"><h3>Faculty Innovation Fellowship</h3><p>Funds faculty-led initiatives that expand UAlbany's AI curriculum, including student engagement, critical inquiry, and creative projects.</p></div>
-            <div className="opp-card"><h3>Dissertation Fellowship</h3><p>Supports PhD research at the intersection of AI and society, including philosophical, artistic, and critical analysis of AI.</p></div>
-            <div className="opp-card"><h3>Master's Experiential Learning Fellowship</h3><p>Emphasizes hands-on learning, with fellows supporting the work of the AI &amp; Society College.</p></div>
-            <div className="about-callout" style={{marginTop:"1rem"}}><p style={{marginBottom:0}}><strong>2026&ndash;2027 fellowship applications are now open.</strong> See the Opportunities tab for details.</p></div>
-          </section>
-          <section className="about-section">
-            <h2 className="about-sh">Faculty Innovation Fellows (2025&ndash;2026)</h2>
-            <div className="person-grid">
-              {[
-                {n:"Cecilia Bibb\u00F2",r:"Visiting Asst. Professor",d:"Educational Policy & Leadership, School of Education",u:"https://www.albany.edu/education/faculty/cecilia-bibbo"},
-                {n:"Sukwoong Choi",r:"Asst. Professor, ISBA",d:"Massry School of Business",u:"https://www.albany.edu/business/faculty/sukwoong-choi"},
-                {n:"Jared R. Enriquez",r:"Asst. Professor",d:"Geography, Planning, and Sustainability",u:"https://www.albany.edu/geographyplanning/faculty/jared-r-enriquez"},
-                {n:"Rey Koslowski",r:"Professor; Director, MIA Program",d:"Political Science, Rockefeller College",u:"https://www.albany.edu/rockefeller/faculty/rey-koslowski"},
-                {n:"Luis Felipe Luna-Reyes",r:"Chair & Professor",d:"Public Admin & Policy, Rockefeller College",u:"https://www.albany.edu/rockefeller/faculty/luis-felipe-luna-reyes"},
-                {n:"Sweta Vangaveti",r:"Research Scientist",d:"The RNA Institute",u:"https://www.albany.edu/rna/faculty/sweta-vangaveti"},
-                {n:"Jianwei Zhang",r:"Professor",d:"Educational Theory & Practice, School of Education",u:"https://www.albany.edu/education/faculty/jianwei-zhang"},
-              ].map((f,i) => (
-                <div key={i} className="person-card">
-                  <div className="person-av">{f.n.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>
-                  <div>
-                    <div className="person-name">{f.n}</div>
-                    <div className="person-role">{f.r}</div>
-                    <div className="person-dept">{f.d}</div>
-                    <a className="text-link" style={{fontSize:"0.73rem"}} href={f.u} target="_blank" rel="noopener noreferrer">Profile &rarr;</a>
-                  </div>
-                </div>
-              ))}
+            <p className="about-p">Through fellowships, faculty and students join the College's interdisciplinary network dedicated to exploring AI's societal impact — from ethical frameworks to creative applications.</p>
+            <p className="about-p"><strong>Faculty Innovation Fellowship</strong> — Funds faculty-led initiatives that expand UAlbany's AI curriculum, including student engagement, critical inquiry, and creative works that deploy or critique AI.</p>
+            <p className="about-p"><strong>Dissertation Fellowship</strong> — Supports PhD research at the intersection of AI and society, including philosophical, artistic, and critical analysis of AI's role in creative and civic life.</p>
+            <p className="about-p"><strong>Master's Experiential Learning Fellowship</strong> — Emphasizes hands-on, practical learning with fellows supporting the work of the AI &amp; Society College.</p>
+            <p className="about-p" style={{color:"var(--pu)",fontWeight:600}}>Applications for 2026–2027 fellowships are now open. Contact <a href="mailto:helgala@albany.edu">helgala@albany.edu</a> or <a href="mailto:mgasco@albany.edu">mgasco@albany.edu</a>.</p>
+          </div>
+
+          <hr className="fellow-divider" />
+
+          <div className="about-section">
+            <h2 className="about-sh">2025–2026 Faculty Innovation Fellows</h2>
+            <div className="person-grid-4">
+              <PersonCard name="Cecilia Bibbò" role="Visiting Asst. Professor" dept="Educational Policy & Leadership, School of Education" photo={BASE+"2024-08/EDU_BibboCecilia.jpg?h=d25d6a3e&itok=DimiBC27"} url="https://www.albany.edu/education/faculty/cecilia-bibbo" />
+              <PersonCard name="Sukwoong Choi" role="Asst. Professor, ISBA" dept="Massry School of Business" photo={BASE+"2023-09/Choi-Sukwoong-bio.jpg?h=923e616e&itok=P_Q3sx4S"} url="https://www.albany.edu/business/faculty/sukwoong-choi" />
+              <PersonCard name="Jared R. Enriquez" role="Assistant Professor" dept="Geography, Planning, and Sustainability" photo={BASE+"2020-08/Jared-Enriquez-Bio_Photo.jpg?h=89d62fa1&itok=Tjb-Puf6"} url="https://www.albany.edu/geographyplanning/faculty/jared-r-enriquez" />
+              <PersonCard name="Rey Koslowski" role="Professor; Director, MIA Program" dept="Political Science, Rockefeller College" photo={BASE+"Koslowski%2C%20Rey_9406-XL.jpg?h=50844e28&itok=UEQfMrzt"} url="https://www.albany.edu/rockefeller/faculty/rey-koslowski" />
+              <PersonCard name="Luis Felipe Luna-Reyes" role="Chair & Professor" dept="Public Admin & Policy, Rockefeller College" photo={BASE+"2025-09/Luis_Luna_Reyes.jpg?h=2efb7f0c&itok=U2ZU4LVS"} url="https://www.albany.edu/rockefeller/faculty/luis-felipe-luna-reyes" />
+              <PersonCard name="Sweta Vangaveti" role="Research Scientist" dept="The RNA Institute" photo={BASE+"2020-10/Sweta-Vangaveti.jpeg?h=6c83441f&itok=mMVFeaHm"} url="https://www.albany.edu/rna/faculty/sweta-vangaveti" />
+              <PersonCard name="Jianwei Zhang" role="Professor" dept="Educational Theory & Practice, School of Education" photo={BASE+"2022-08/Zhang-Jianwei.jpg?h=a7052f9c&itok=mLphmk2R"} url="https://www.albany.edu/education/faculty/jianwei-zhang" />
             </div>
-          </section>
-          <section className="about-section">
-            <h2 className="about-sh">Master's Fellows (Spring 2026)</h2>
-            <div className="person-grid">
-              {[
-                {n:"Batzaya (Zaya) Byambasambuu",r:"MPA, Public Administration & Policy",d:"Developing the AI Curriculum Navigator for UAlbany"},
-                {n:"Kathleen Boyle",r:"MS, Curriculum Development & Instructional Technology",d:"Working on a handbook about AI for teaching"},
-                {n:"Ayotokunbo Egbontan",r:"MS, Environmental Health Science",d:"Reviewing literature on AI in teaching and learning"},
-                {n:"Prakash R. Kota",r:"MBA, Business Administration",d:"Developing an AI agent for the classroom"},
-                {n:"Jayanth Reddy Lethakula",r:"MS, Data Science",d:"Configuring AI workstations at the Makerspace"},
-                {n:"Robert Manning",r:"MA, Philosophy",d:"Boosting visibility of the AI & Society College"},
-                {n:"Kalonji Samuel",r:"MS, Information Science",d:"Developing an AI-integrated syllabus generator"},
-                {n:"Gayathri Gupta Samudrala",r:"MS, Educational Psychology & Methodology",d:"Interviewing faculty on AI use in the classroom"},
-              ].map((f,i) => (
-                <div key={i} className="person-card">
-                  <div className="person-av grad">{f.n.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>
-                  <div>
-                    <div className="person-name">{f.n}</div>
-                    <div className="person-role">{f.r}</div>
-                    <div className="person-dept">{f.d}</div>
-                  </div>
-                </div>
-              ))}
+          </div>
+
+          <hr className="fellow-divider" />
+
+          <div className="about-section">
+            <h2 className="about-sh">2025–2026 Dissertation Fellows</h2>
+            <div className="person-grid-4">
+              <PersonCard name="Rawan Abdelaal" role="Doctoral Student, Curriculum and Instruction" photo={BASE+"rawan.jpeg?h=fbfd6560&itok=vyupWg-X"} />
+              <PersonCard name="Karan Bhasin" role="Doctoral Student, Economics" photo={BASE+"KB_Headshot.jpg?h=f329a4ed&itok=3gpPKhoM"} />
+              <PersonCard name="Anastasios Karnazes" role="Doctoral Student, English" photo="" />
+              <PersonCard name="Iris Aleida Pinzón Arteaga" role="Doctoral Student, Sociology" photo="" />
             </div>
-          </section>
+          </div>
+
+          <hr className="fellow-divider" />
+
+          <div className="about-section">
+            <h2 className="about-sh">Spring 2026 Master's Experiential Learning Fellows</h2>
+            <div className="person-grid-4">
+              <PersonCard name="Batzaya (Zaya) Byambasambuu" role="MPA, Public Administration & Policy" photo={BASE+"Batzaya%20%28Zaya%29%20Byambasambuu.jpeg?h=7ea24003&itok=07vrGXt9"} />
+              <PersonCard name="Kathleen Boyle" role="MS, Curriculum Development & Instructional Technology" photo={BASE+"Kathleen-Boyle.jpg?h=5e69b338&itok=c9LtT663"} />
+              <PersonCard name="Ayotokunbo Egbontan" role="MS, Environmental Health Science" photo={BASE+"Ayotokunbo%20Egbontan.png?h=4efb6df5&itok=5gvNQQzu"} />
+              <PersonCard name="Prakash R. Kota" role="MBA, Business Administration" photo={BASE+"Prakash-Kota.jpg?h=b044a8f9&itok=I7rey-Gt"} />
+              <PersonCard name="Jayanth Reddy Lethakula" role="MS, Data Science" photo={BASE+"Jayanth%20Reddy%20Lethakula.jpg?h=7d892785&itok=qKTDXJVT"} />
+              <PersonCard name="Robert Manning" role="MA, Philosophy" photo={BASE+"Robert%20Manning.png?h=d9227cf5&itok=K30aBrjA"} />
+              <PersonCard name="Kalonji Samuel" role="MS, Information Science" photo={BASE+"Kalonji%20Samuel.jpg?h=ad6374a7&itok=LDYhwzho"} />
+              <PersonCard name="Gayathri Gupta Samudrala" role="MS, Educational Psychology & Methodology" photo={BASE+"Gayathri-Gupta-Samudrala.jpg?h=0e903c36&itok=dWVgD9MH"} />
+            </div>
+          </div>
         </>)}
 
-        {tab === "Opportunities" && (<>
-          <section className="about-section">
-            <h2 className="about-sh">AI for Public Good Initiative</h2>
-            <p className="about-p">A partnership between UAlbany, SUNY Oneonta, SUNY Cobleskill and Hudson Valley Community College to strengthen AI teaching and research across the region.</p>
-            <div className="opp-card"><h3>AI Preparedness Academy &amp; Faculty Learning Community</h3><p>Building institutional capacity for AI by equipping faculty with tools and frameworks to teach about and with AI.</p></div>
-            <div className="opp-card"><h3>Visiting &amp; Affiliated Faculty Program</h3><p>Supporting faculty in co-developing AI-infused microcredentials, courses and instructional materials across institutions.</p></div>
-            <div className="opp-card"><h3>"AI for Good" Challenge</h3><p>Annual cross-campus hackathon bringing together interdisciplinary teams to develop AI-powered solutions to community challenges.</p></div>
-          </section>
-          <section className="about-section">
-            <h2 className="about-sh">Fellowship Applications</h2>
-            <p className="about-p">2026&ndash;2027 applications are open. Contact <a href="mailto:helgala@albany.edu">helgala@albany.edu</a> or <a href="mailto:mgasco@albany.edu">mgasco@albany.edu</a>.</p>
-          </section>
-        </>)}
-
-        <div style={{paddingTop:"0.75rem",display:"flex",gap:8}}>
-          <button className="btn btn-ghost" onClick={() => goTo("courses")}>&larr; Browse courses</button>
-          <a className="btn btn-primary" href="https://www.albany.edu/ai-plus/ai-society-college" target="_blank" rel="noopener noreferrer">Official site &rarr;</a>
-        </div>
       </div>
     </div>
   );
 }
 
+/* ══ APP ROOT ══ */
 export default function App() {
   const [page, setPage] = useState("courses");
   const [catalog, setCatalog] = useState([]);
@@ -665,14 +751,16 @@ export default function App() {
           <div className="header-inner">
             <nav className="site-nav">
               <button className={`nav-link${page === "courses" ? " active" : ""}`} onClick={() => goTo("courses")}>Courses &amp; Programs</button>
-              <button className={`nav-link${page === "about" ? " active" : ""}`} onClick={() => goTo("about")}>About</button>
+              <button className={`nav-link${page === "policy"  ? " active" : ""}`} onClick={() => goTo("policy")}>AI Policy</button>
+              <button className={`nav-link${page === "about"   ? " active" : ""}`} onClick={() => goTo("about")}>About</button>
             </nav>
           </div>
         </header>
 
         <main style={{flex:1}}>
           {page === "courses" && <CoursesPage catalog={catalog} />}
-          {page === "about"   && <AboutPage goTo={goTo} />}
+          {page === "policy"  && <PolicyPage />}
+          {page === "about"   && <AboutPage />}
         </main>
 
         <footer className="site-footer">
