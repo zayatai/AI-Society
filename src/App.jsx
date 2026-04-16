@@ -25,6 +25,70 @@ const TOPIC_CHIPS = [
   { label:"Cybersecurity / AI Security", cls:"chip-sec"  },
 ];
 
+/* ── Fellow bio data ── */
+const FELLOW_BIOS = {
+  "Batzaya (Zaya) Byambasambuu": {
+    role:"MPA, Public Administration & Policy",
+    photo:"Batzaya%20%28Zaya%29%20Byambasambuu.jpeg?h=7ea24003&itok=07vrGXt9",
+    bio:"Batzaya (Zaya) Byambasambuu is a Fulbright Scholar and Master of Public Administration (MPA) student at UAlbany's Rockefeller College of Public Affairs and Policy, concentrating in information technology management. Her interests focus on the intersection of technology, governance and public policy, particularly how digital systems shape public institutions and child protection.\n\nBefore starting her graduate studies, Zaya worked on national initiatives tackling human trafficking and child protection in Mongolia. At The Asia Foundation, she contributed to a U.S. Department of State-funded Child Protection Compact project aimed at strengthening the investigation and prosecution of child trafficking cases and enhancing victim-centered responses within the justice system. She also co-founded the Anti-bullying Initiative Mongolia, leading programs focused on cyberbullying prevention and public awareness campaigns.\n\nAs a Master's Experiential Learning Fellow, Zaya is developing an AI Curriculum Navigator for UAlbany."
+  },
+  "Kathleen Boyle": {
+    role:"MS, Curriculum Development & Instructional Technology",
+    photo:"Kathleen-Boyle.jpg?h=5e69b338&itok=c9LtT663",
+    bio:"Kathleen Boyle is a marketing strategist, educator, and learning and development specialist with more than 20 years of experience in the marketing communications industry and over 15 years in higher education.\n\nShe has held leadership and strategy roles at global agencies including OgilvyOne Worldwide and Wunderman Cato Johnson, working with major clients such as IBM, DuPont, DHL, and SAP. In academia, she has developed innovative marketing and communications curricula, created new academic programs, and coached award-winning student teams in national competitions.\n\nAs a Master's Experiential Learning Fellow, Kathy is working on a handbook about AI for teaching that will support UAlbany faculty members using AI in the classroom."
+  },
+  "Ayotokunbo Egbontan": {
+    role:"MS, Environmental Health Science",
+    photo:"Ayotokunbo%20Egbontan.png?h=4efb6df5&itok=5gvNQQzu",
+    bio:"Ayotokunbo Egbontan is a master's student in UAlbany's Environmental Health Science program. His research focuses on the comparative environmental and economic performance of conventional solar photovoltaic systems and integrated agrivoltaics systems — using AI to model environmental impacts more precisely by learning from large datasets.\n\nAs a Master's Experiential Learning Fellow, Ayo has been reviewing the literature on the use of AI in teaching and learning processes in higher education."
+  },
+  "Prakash R. Kota": {
+    role:"MBA, Business Administration",
+    photo:"Prakash-Kota.jpg?h=b044a8f9&itok=I7rey-Gt",
+    bio:"Prakash R. Kota is a student in the Part-Time Weekend Master of Business Administration (MBA) for Executives program and an adjunct instructor teaching AECO 466W: Financial Economics at UAlbany's Massry School of Business. He is also the founder of MLPowersAI, Inc., an early-stage venture focused on building machine learning models, agentic AI systems and scalable AI architectures.\n\nPrakash holds a PhD in Chemical Engineering and has a background in computational modeling and engineering systems. His projects span financial forecasting, semiconductor process optimization, healthcare diagnostics, and environmental markets.\n\nAs a Master's Experiential Learning Fellow, Prakash is developing an AI agent that could be used in the classroom."
+  },
+  "Jayanth Reddy Lethakula": {
+    role:"MS, Data Science",
+    photo:"Jayanth%20Reddy%20Lethakula.jpg?h=7d892785&itok=qKTDXJVT",
+    bio:"Jayanth Reddy Lethakula is a master's student in Data Science at UAlbany. His interests include artificial intelligence, machine learning and data-driven systems for solving real-world problems.\n\nAs a Master's Experiential Learning Fellow, Jayanth is configuring and maintaining AI workstations at the AI Makerspace, supporting AI-related activities and events, and developing an AI-guided Project Development System designed to help students transform project ideas into feasible implementations using Makerspace tools and resources."
+  },
+  "Robert Manning": {
+    role:"MA, Philosophy",
+    photo:"Robert%20Manning.png?h=d9227cf5&itok=K30aBrjA",
+    bio:"Robert Manning is a graduate student in philosophy at UAlbany currently researching privacy as it relates to brain-implant technology, Large Language Model (LLM) technology and AI.\n\nAs a Master's Experiential Learning Fellow, Robert has been working with dissertation fellows, faculty innovation fellows and College leadership to boost the visibility of the AI & Society College."
+  },
+  "Kalonji Samuel": {
+    role:"MS, Information Science",
+    photo:"Kalonji%20Samuel.jpg?h=ad6374a7&itok=LDYhwzho",
+    bio:"Kalonji Samuel is completing UAlbany's MS in Information Science program, with a concentration in Artificial Intelligence and Data Analytics. As a former U.S. Army Officer, U.S. Diplomat and Senior Federal Controller, Kalonji brings over 20 years of leadership experience managing billion-dollar global portfolios and leading financial governance across high-stakes, regulated environments.\n\nKalonji is a graduate of the Microsoft Software & Systems Academy (MSSA) and specializes in the intersection of cloud governance, risk transformation, and responsible AI adoption.\n\nAs a Master's Experiential Learning Fellow, Kalonji is developing an AI-integrated syllabus generator that is designed to help faculty align curricula with University-wide AI policies while maintaining pedagogical flexibility."
+  },
+  "Gayathri Gupta Samudrala": {
+    role:"MS, Educational Psychology & Methodology",
+    photo:"Gayathri-Gupta-Samudrala.jpg?h=0e903c36&itok=dWVgD9MH",
+    bio:"Gayathri is a master's student in the Educational Psychology and Methodology program at UAlbany. She has a bachelor's degree in psychology, economics, and public administration from Hyderabad, India. Her research interests include developmental psychology and the intersection of AI, technology and human development.\n\nAs a Master's Experiential Learning Fellow, Gayathri is interviewing faculty to understand their use of AI in the classroom environment and how the AI & Society College can help address their needs."
+  },
+  "Rawan Abdelaal": {
+    role:"Doctoral Student, Curriculum and Instruction",
+    photo:"rawan.jpeg?h=fbfd6560&itok=vyupWg-X",
+    bio:"Rawan Abdelaal is a PhD student in curriculum and instruction at the University at Albany. She holds a bachelor's degree in biotechnology from the City College of New York and a master's degree in curriculum development and instructional technology from UAlbany.\n\nHer research explores the relationship between artificial intelligence (AI) and computational thinking (CT) at the intersection of science education. With the rapid advancement of AI, she seeks to investigate and develop methods that promote ethical, critical and effective uses of AI in K–12 classrooms, empowering educators and students to engage thoughtfully and responsibly with intelligent technologies."
+  },
+  "Karan Bhasin": {
+    role:"Doctoral Student, Economics",
+    photo:"KB_Headshot.jpg?h=f329a4ed&itok=3gpPKhoM",
+    bio:"Karan Bhasin is a PhD candidate in Quantitative Economics and Econometrics at the University at Albany, SUNY. His research lies at the intersection of monetary economics and applied econometrics, with a focus on how economic agents process information and update their expectations.\n\nKaran's work has been featured in The Economist and The Wall Street Journal and has appeared in leading policy platforms such as the Brookings Institution, VoxEU and Econofact. He has held research and policy roles at the International Monetary Fund, World Bank, Empire State Development, and MyGov, Government of India.\n\nCurrently, Karan is exploring the use of natural language processing (NLP) techniques to identify and quantify policy shocks, leveraging textual data to uncover latent signals in economic policymaking."
+  },
+  "Anastasios Karnazes": {
+    role:"Doctoral Student, English",
+    photo:"",
+    bio:"Anastasios Karnazes is a PhD candidate in English Studies at UAlbany, researching the material transformation from book technologies to artificial intelligence systems and its effects on aesthetic production.\n\nHe is the author of Rainbow Sonnets 20, published by The Song Cave, and founder of Theaphora, an experimental book and game publisher. His work has been covered in Artforum, ARTnews, Spike Magazine, and Forbes.\n\nHis dissertation positions artificial intelligence as the exhaustion point of book logic — the moment when Enlightenment systems of knowledge production, replication, and distribution culminate in computational infrastructure."
+  },
+  "Iris Aleida Pinzón Arteaga": {
+    role:"Doctoral Student, Sociology",
+    photo:"",
+    bio:"Iris Aleida Pinzón Arteaga is a PhD candidate in the Department of Sociology at the University at Albany and member of the AI & Society Research Center. Her research examines how young users adopt generative AI technologies for academic and non-academic purposes, with particular attention to patterns of digital inequality.\n\nAn interdisciplinary scholar with a background in psychology and social research, she helped co-design the AI for Social Change Lab with Professor Angie Chung, one of the first courses in the Department of Sociology to promote critical reflection on AI technologies.\n\nHer dissertation examines how young people engage with generative AI chatbots in educational settings and how these engagements reflect broader digital inequalities."
+  },
+};
+
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
 
@@ -43,38 +107,38 @@ const CSS = `
   --ds:'DM Serif Display',Georgia,serif;
   --font:'Inter',system-ui,-apple-system,sans-serif;
 }
-html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:17px}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 button,select,input{font-family:var(--font)}
 a{color:inherit;text-decoration:none}
 .app{display:flex;flex-direction:column;min-height:100vh}
 
 .site-header{position:sticky;top:0;z-index:20;background:var(--ch);border-bottom:3px solid var(--go)}
-.header-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;align-items:stretch;height:56px}
+.header-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;align-items:stretch;height:58px}
 .site-nav{display:flex;align-items:stretch;gap:0}
-.nav-link{padding:0 1.1rem;display:flex;align-items:center;color:rgba(255,255,255,.52);font-size:0.82rem;font-weight:500;cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.15s;white-space:nowrap;letter-spacing:.01em}
+.nav-link{padding:0 1.1rem;display:flex;align-items:center;color:rgba(255,255,255,.52);font-size:0.88rem;font-weight:500;cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.15s;white-space:nowrap;letter-spacing:.01em}
 .nav-link:hover{color:rgba(255,255,255,.88);background:rgba(255,255,255,.05)}
 .nav-link.active{color:#fff;border-bottom-color:var(--go)}
 
 .page-header{background:var(--ch2);padding:2.75rem 0 2.25rem;position:relative}
 .page-header::after{content:'';position:absolute;bottom:0;left:calc((100% - min(var(--container),calc(100% - 2rem)))/2);width:56px;height:2px;background:var(--go)}
 .page-header .container{width:min(var(--container),calc(100% - 2rem));margin:0 auto}
-.eyebrow{display:block;margin:0 0 0.65rem;color:var(--go);text-transform:uppercase;letter-spacing:.16em;font-size:0.68rem;font-weight:700}
+.eyebrow{display:block;margin:0 0 0.65rem;color:var(--go);text-transform:uppercase;letter-spacing:.16em;font-size:0.72rem;font-weight:700}
 .page-title{font-family:var(--ds);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;margin:0 0 0.3rem;color:#fff;letter-spacing:-.02em}
-.page-subtitle{font-size:0.9rem;color:rgba(255,255,255,.42);margin:0;font-weight:300}
-.page-tagline{font-size:0.85rem;color:rgba(255,255,255,.32);margin:0.4rem 0 1.75rem;font-weight:300;letter-spacing:.01em}
-.search-input{width:100%;max-width:500px;border:1px solid rgba(198,146,20,.38);background:rgba(255,255,255,.07);border-radius:4px;padding:0.72rem 1rem;font:inherit;font-size:0.88rem;color:#fff;outline:none;transition:border-color 0.18s,box-shadow 0.18s}
+.page-subtitle{font-size:1rem;color:rgba(255,255,255,.42);margin:0;font-weight:300}
+.page-tagline{font-size:0.92rem;color:rgba(255,255,255,.32);margin:0.4rem 0 1.75rem;font-weight:300}
+.search-input{width:100%;max-width:500px;border:1px solid rgba(198,146,20,.38);background:rgba(255,255,255,.07);border-radius:4px;padding:0.75rem 1rem;font:inherit;font-size:0.95rem;color:#fff;outline:none;transition:border-color 0.18s,box-shadow 0.18s}
 .search-input:focus{border-color:var(--go);box-shadow:0 0 0 3px rgba(198,146,20,.14)}
 .search-input::placeholder{color:rgba(255,255,255,.26)}
 
 .tbar{background:var(--surface-muted);border-bottom:1px solid var(--border);padding:0.45rem 0}
-.tbar-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;font-size:0.68rem;color:var(--muted)}
-.tbar-btn{background:none;border:none;font-size:0.68rem;color:var(--pu);cursor:pointer;text-decoration:underline}
+.tbar-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;font-size:0.75rem;color:var(--muted)}
+.tbar-btn{background:none;border:none;font-size:0.75rem;color:var(--pu);cursor:pointer;text-decoration:underline}
 
 .chips-wrap{background:var(--bg);border-bottom:1px solid var(--border);padding:0.9rem 0}
 .chips-row{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.chips-label{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.03em;margin-right:4px;white-space:nowrap}
-.chip{display:inline-flex;align-items:center;padding:5px 13px;border-radius:20px;font-size:.73rem;font-weight:600;border:1.5px solid transparent;cursor:pointer;transition:all .15s;white-space:nowrap}
+.chips-label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.03em;margin-right:4px;white-space:nowrap}
+.chip{display:inline-flex;align-items:center;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600;border:1.5px solid transparent;cursor:pointer;transition:all .15s;white-space:nowrap}
 .chip-ml  {background:#ede5f8;color:#46166b;border-color:#d4c2f0}.chip-ml.on,.chip-ml:hover{background:#46166b;color:#fff;border-color:#46166b}
 .chip-gen {background:#e3ebf9;color:#1540a8;border-color:#b8cdf0}.chip-gen.on,.chip-gen:hover{background:#1540a8;color:#fff;border-color:#1540a8}
 .chip-eth {background:#fdf6de;color:#8a6508;border-color:#f0d98a}.chip-eth.on,.chip-eth:hover{background:#C69214;color:#fff;border-color:#C69214}
@@ -82,31 +146,30 @@ a{color:inherit;text-decoration:none}
 .chip-hlt {background:#fde8e8;color:#a32d2d;border-color:#f0b8b8}.chip-hlt.on,.chip-hlt:hover{background:#a32d2d;color:#fff;border-color:#a32d2d}
 .chip-sec {background:#fff3e0;color:#a05010;border-color:#f0c88a}.chip-sec.on,.chip-sec:hover{background:#a05010;color:#fff;border-color:#a05010}
 
-.catalog-layout{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:grid;grid-template-columns:252px 1fr;gap:1.5rem;padding:1.5rem 0 3rem;align-items:start}
-.sidebar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);position:sticky;top:68px;overflow:hidden}
+.catalog-layout{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:1.5rem;padding:1.5rem 0 3rem;align-items:start}
+.sidebar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);position:sticky;top:70px;overflow:hidden}
 .sidebar-header{padding:0.7rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--ch)}
-.sidebar-label{font-size:0.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.sidebar-clear{background:none;border:none;font-size:0.72rem;font-weight:600;color:var(--go);cursor:pointer;padding:0}
-.sidebar-clear:hover{text-decoration:underline}
+.sidebar-label{font-size:0.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.sidebar-clear{background:none;border:none;font-size:0.75rem;font-weight:600;color:var(--go);cursor:pointer;padding:0}
 .filter-group{border-bottom:1px solid var(--border)}
 .filter-group:last-child{border-bottom:none}
-.fg-header{padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:background 0.12s}
+.fg-header{padding:0.7rem 1rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:background 0.12s}
 .fg-header:hover{background:var(--surface-muted)}
-.fg-label{font-size:0.8rem;font-weight:600;color:var(--text)}
+.fg-label{font-size:0.88rem;font-weight:600;color:var(--text)}
 .fg-arrow{font-size:0.55rem;color:#b0a8c0;transition:transform 0.2s}
 .fg-arrow.open{transform:rotate(180deg)}
-.fg-options{padding:0.25rem 1rem 0.8rem;display:flex;flex-direction:column;gap:0.42rem}
-.fg-opt{display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;font-size:0.8rem;color:var(--muted);line-height:1.4}
+.fg-options{padding:0.25rem 1rem 0.85rem;display:flex;flex-direction:column;gap:0.45rem}
+.fg-opt{display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;font-size:0.85rem;color:var(--muted);line-height:1.4}
 .fg-opt input{accent-color:var(--pu);cursor:pointer;margin-top:3px;flex-shrink:0}
 
 .results{display:flex;flex-direction:column;gap:0.75rem}
 .results-bar{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.2rem;flex-wrap:wrap}
-.results-count{font-size:0.78rem;color:var(--muted);white-space:nowrap}
+.results-count{font-size:0.85rem;color:var(--muted);white-space:nowrap}
 .v-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden}
-.v-btn{background:none;border:none;padding:6px 10px;cursor:pointer;font-size:0.82rem;color:var(--muted);transition:all .15s}
+.v-btn{background:none;border:none;padding:7px 11px;cursor:pointer;font-size:0.88rem;color:var(--muted);transition:all .15s}
 .v-btn.on{background:var(--pu);color:#fff}
 
-.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:0.7rem;font-weight:600;white-space:nowrap;letter-spacing:.01em}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:600;white-space:nowrap;letter-spacing:.01em}
 .badge-dc{background:#ede5f8;color:#46166b}.badge-mc{background:#fdf6de;color:#8a6508}.badge-ec{background:#e3f2eb;color:#14653c}
 .badge-cert{background:#e8f0fe;color:#1a47b0}.badge-ug{background:#e3ebf9;color:#1540a8}.badge-gr{background:#ede5f8;color:#46166b}
 .badge-free{background:#d2f4e3;color:#0b5e31;border:1px solid #9de3bf}.badge-prov{background:#e8f0fe;color:#1a47b0}
@@ -117,44 +180,56 @@ a{color:inherit;text-decoration:none}
 .card:hover{transform:translateY(-2px);border-color:rgba(198,146,20,.4);box-shadow:var(--shadow-sm)}
 .card-body{padding:1.1rem 1.2rem}
 .card-topline{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:0.5rem}
-.card-code{font-size:0.68rem;font-weight:700;color:var(--go);letter-spacing:.08em;text-transform:uppercase;margin-bottom:0.15rem}
-.card-title{font-size:0.97rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.15rem}
-.card-school{font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem}
-.card-desc{font-size:0.82rem;color:var(--muted);line-height:1.62;margin-bottom:0.6rem}
-.card-footer{padding:0.65rem 1.2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:var(--surface-muted)}
-.card-source{font-size:0.66rem;color:#b0a8c0}
-.text-link{color:var(--pu);font-weight:600;font-size:0.8rem;text-decoration:none;transition:color 0.15s}
+.card-code{font-size:0.73rem;font-weight:700;color:var(--go);letter-spacing:.08em;text-transform:uppercase;margin-bottom:0.15rem}
+.card-title{font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.15rem}
+.card-school{font-size:0.82rem;color:var(--muted);margin-bottom:0.6rem}
+.card-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;margin-bottom:0.6rem}
+.card-footer{padding:0.7rem 1.2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:var(--surface-muted)}
+.card-source{font-size:0.72rem;color:#b0a8c0}
+.text-link{color:var(--pu);font-weight:600;font-size:0.88rem;text-decoration:none;transition:color 0.15s}
 .text-link:hover{text-decoration:underline}
 
 .gc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem}
 .gc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;transition:all 0.18s;display:flex;flex-direction:column}
 .gc:hover{transform:translateY(-2px);border-color:rgba(198,146,20,.4);box-shadow:var(--shadow-sm)}
 .gc-top{height:3px}
-.gc-body{padding:0.95rem 1.1rem;flex:1}
-.gc-code{font-size:0.65rem;font-weight:700;color:var(--go);letter-spacing:.08em;text-transform:uppercase;margin-bottom:0.15rem}
-.gc-title{font-size:0.88rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.15rem}
-.gc-school{font-size:0.7rem;color:var(--muted);margin-bottom:0.5rem}
-.gc-desc{font-size:0.78rem;color:var(--muted);line-height:1.55}
-.gc-badges{padding:0 1.1rem 0.65rem;display:flex;flex-wrap:wrap;gap:4px}
-.gc-footer{padding:0.6rem 1.1rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--surface-muted);margin-top:auto}
+.gc-body{padding:1rem 1.1rem;flex:1}
+.gc-code{font-size:0.7rem;font-weight:700;color:var(--go);letter-spacing:.08em;text-transform:uppercase;margin-bottom:0.15rem}
+.gc-title{font-size:0.95rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.15rem}
+.gc-school{font-size:0.76rem;color:var(--muted);margin-bottom:0.5rem}
+.gc-desc{font-size:0.84rem;color:var(--muted);line-height:1.58}
+.gc-badges{padding:0 1.1rem 0.7rem;display:flex;flex-wrap:wrap;gap:4px}
+.gc-footer{padding:0.65rem 1.1rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--surface-muted);margin-top:auto}
 
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:3rem 1.5rem;overflow-y:auto;backdrop-filter:blur(5px);animation:fadeIn 0.15s ease}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal{background:var(--surface);border-radius:var(--radius);max-width:720px;width:100%;box-shadow:0 24px 64px rgba(49,31,74,0.22);overflow:hidden;border-top:3px solid var(--go);animation:slideUp 0.2s cubic-bezier(0.16,1,0.3,1)}
 @keyframes slideUp{from{transform:translateY(14px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-header{background:var(--ch);padding:1.5rem 1.75rem 1.3rem;position:relative}
-.modal-close{position:absolute;top:0.85rem;right:0.85rem;background:rgba(255,255,255,.12);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:0.85rem;display:flex;align-items:center;justify-content:center;transition:background 0.15s}
+.modal-close{position:absolute;top:0.85rem;right:0.85rem;background:rgba(255,255,255,.12);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:background 0.15s}
 .modal-close:hover{background:rgba(255,255,255,.24)}
 .modal-badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:0.5rem}
-.modal-title{font-family:var(--ds);font-size:1.4rem;font-weight:400;color:#fff;line-height:1.2;letter-spacing:-.01em}
+.modal-title{font-family:var(--ds);font-size:1.5rem;font-weight:400;color:#fff;line-height:1.2;letter-spacing:-.01em}
 .modal-body{padding:1.5rem 1.75rem}
 .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem 1.5rem;margin-bottom:1.25rem}
-.modal-field-label{font-size:0.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem}
-.modal-field-value{font-size:0.86rem;color:var(--text);line-height:1.55}
+.modal-field-label{font-size:0.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.2rem}
+.modal-field-value{font-size:0.92rem;color:var(--text);line-height:1.55}
 .modal-section{margin-bottom:1rem}
 .modal-footer{padding:1rem 1.75rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap}
 
-.btn{display:inline-flex;align-items:center;gap:0.3rem;padding:0.52rem 1rem;border-radius:var(--radius-sm);font-size:0.8rem;font-weight:600;cursor:pointer;border:none;transition:all 0.15s;text-decoration:none;white-space:nowrap}
+/* BIO MODAL */
+.bio-modal{background:var(--surface);border-radius:var(--radius);max-width:640px;width:100%;box-shadow:0 24px 64px rgba(49,31,74,0.22);overflow:hidden;border-top:3px solid var(--pu);animation:slideUp 0.2s cubic-bezier(0.16,1,0.3,1)}
+.bio-modal-header{background:var(--ch);padding:1.25rem 1.5rem;position:relative;display:flex;gap:1rem;align-items:center}
+.bio-modal-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
+.bio-modal-photo-placeholder{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--pu),#8a3cc0);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;flex-shrink:0}
+.bio-modal-name{font-family:var(--ds);font-size:1.25rem;color:#fff;line-height:1.2}
+.bio-modal-role{font-size:0.82rem;color:rgba(255,255,255,.55);margin-top:2px}
+.bio-modal-body{padding:1.5rem;font-size:0.95rem;color:var(--muted);line-height:1.82}
+.bio-modal-body p{margin-bottom:0.85rem}
+.bio-modal-body p:last-child{margin-bottom:0}
+.bio-modal-footer{padding:0.85rem 1.5rem;border-top:1px solid var(--border);display:flex;justify-content:flex-end}
+
+.btn{display:inline-flex;align-items:center;gap:0.3rem;padding:0.55rem 1rem;border-radius:var(--radius-sm);font-size:0.88rem;font-weight:600;cursor:pointer;border:none;transition:all 0.15s;text-decoration:none;white-space:nowrap}
 .btn-primary{background:var(--pu);color:#fff}.btn-primary:hover{background:var(--pud)}
 .btn-gold{background:var(--go);color:#1a1a1a}.btn-gold:hover{background:var(--gol)}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-ghost:hover{border-color:var(--pu);color:var(--pu)}
@@ -163,77 +238,70 @@ a{color:inherit;text-decoration:none}
 
 /* POLICY PAGE */
 .policy-wrap{width:min(var(--container),calc(100% - 2rem));margin:0 auto;padding:2rem 0 3rem}
-.policy-tool-frame{border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2.5rem;background:var(--surface)}
-.policy-tool-label{padding:0.6rem 1rem;background:var(--pud);font-size:0.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:space-between}
-.policy-tool-label a{color:var(--go);font-size:0.7rem;font-weight:600;text-decoration:underline}
-.policy-tool-frame iframe{width:100%;height:520px;border:none;display:block}
+.policy-tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);border-left:4px solid var(--pu);padding:1.5rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:2.5rem;box-shadow:var(--shadow-sm)}
+.policy-tool-icon{font-size:2rem;flex-shrink:0;margin-top:2px}
+.policy-tool-title{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.35rem}
+.policy-tool-desc{font-size:0.92rem;color:var(--muted);line-height:1.72;margin-bottom:1rem}
+.policy-tool-by{font-size:0.78rem;color:var(--pu);font-weight:600;margin-bottom:0.85rem}
 .policy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
 .policy-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.4rem 1.5rem 1.4rem 1.75rem;transition:all 0.18s;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:0.5rem;border-left-width:4px}
 .policy-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
-.pc-purple{border-left-color:#46166b}
-.pc-gold  {border-left-color:#C69214}
-.pc-green {border-left-color:#14653c}
-.pc-blue  {border-left-color:#1540a8}
-.pc-red   {border-left-color:#a32d2d}
-.pc-teal  {border-left-color:#0e7490}
+.pc-purple{border-left-color:#46166b}.pc-gold{border-left-color:#C69214}.pc-green{border-left-color:#14653c}
+.pc-blue{border-left-color:#1540a8}.pc-red{border-left-color:#a32d2d}.pc-teal{border-left-color:#0e7490}
 .policy-card-icon{font-size:1.4rem}
-.policy-card-title{font-size:0.95rem;font-weight:700;color:var(--text)}
-.policy-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.65;flex:1}
-.policy-card-meta{font-size:0.68rem;color:#b0a8c0}
+.policy-card-title{font-size:1rem;font-weight:700;color:var(--text)}
+.policy-card-desc{font-size:0.88rem;color:var(--muted);line-height:1.65;flex:1}
+.policy-card-meta{font-size:0.73rem;color:#b0a8c0}
 
 /* ABOUT PAGE */
 .about-page{min-height:calc(100vh - 180px)}
 .about-hero{background:var(--ch2);padding:2.75rem 1.5rem 2.25rem;position:relative}
 .about-hero::after{content:'';position:absolute;bottom:0;left:1.5rem;width:56px;height:2px;background:var(--go)}
 .about-hero-inner{max-width:900px;margin:0 auto}
-.about-hero-kicker{display:block;font-size:0.68rem;font-weight:700;color:var(--go);letter-spacing:.16em;margin-bottom:0.5rem;text-transform:uppercase}
+.about-hero-kicker{display:block;font-size:0.72rem;font-weight:700;color:var(--go);letter-spacing:.16em;margin-bottom:0.5rem;text-transform:uppercase}
 .about-hero-title{font-family:var(--ds);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;color:#fff;line-height:1.12;margin:0 0 0.4rem;letter-spacing:-.02em}
-.about-hero-sub{font-size:0.86rem;color:rgba(255,255,255,.38);line-height:1.65;max-width:520px;margin:0;font-weight:300}
-.about-tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:56px;z-index:10}
+.about-hero-sub{font-size:0.92rem;color:rgba(255,255,255,.38);line-height:1.65;max-width:520px;margin:0;font-weight:300}
+.about-tabs-bar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:58px;z-index:10}
 .about-tabs-inner{max-width:900px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0;overflow-x:auto}
-.about-tab{background:none;border:none;border-bottom:2px solid transparent;padding:0.7rem 1rem;margin-bottom:-1px;font-size:0.82rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all 0.15s}
+.about-tab{background:none;border:none;border-bottom:2px solid transparent;padding:0.75rem 1.1rem;margin-bottom:-1px;font-size:0.9rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all 0.15s}
 .about-tab:hover{color:var(--text)}
 .about-tab.active{color:var(--pu);border-bottom-color:var(--go);font-weight:600}
 .about-content{max-width:900px;margin:0 auto;padding:2rem 1.5rem 3rem}
 .about-section{margin-bottom:2rem}
-.about-sh{font-family:var(--ds);font-size:1.2rem;color:var(--text);margin:0 0 0.75rem;letter-spacing:-.01em}
-.about-p{font-size:0.88rem;color:var(--muted);line-height:1.82;margin:0 0 0.6rem}
+.about-sh{font-family:var(--ds);font-size:1.3rem;color:var(--text);margin:0 0 0.75rem;letter-spacing:-.01em}
+.about-p{font-size:0.95rem;color:var(--muted);line-height:1.85;margin:0 0 0.65rem}
 .about-p a{color:var(--pu);font-weight:600}.about-p a:hover{text-decoration:underline}
-.about-p strong{color:var(--text)}
 .about-photo{width:100%;border-radius:var(--radius-sm);object-fit:cover;display:block;margin:1rem 0 1.5rem;max-height:280px}
 
-/* PERSON GRID */
-.section-label{font-size:0.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--go);margin:0 0 0.75rem;display:block}
+.section-label{font-size:0.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--go);margin:0 0 0.75rem;display:block}
 .person-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
 .person-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:0.85rem;margin-bottom:1.5rem}
 .person-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;margin-bottom:1.5rem}
-.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:border-color 0.15s;display:flex;flex-direction:column}
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all 0.15s;display:flex;flex-direction:column}
 .pcard:hover{border-color:rgba(70,22,107,0.3);box-shadow:var(--shadow-sm)}
+.pcard.clickable{cursor:pointer}
+.pcard.clickable:hover{transform:translateY(-2px)}
 .pcard-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;display:block;background:var(--pul)}
 .pcard-photo-placeholder{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,var(--pu),#8a3cc0);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:#fff}
-.pcard-body{padding:0.75rem 0.85rem;flex:1;display:flex;flex-direction:column;gap:0.15rem}
-.pcard-name{font-size:0.82rem;font-weight:700;color:var(--text);line-height:1.3}
-.pcard-role{font-size:0.72rem;color:var(--pu);font-weight:600;line-height:1.3}
-.pcard-dept{font-size:0.68rem;color:var(--muted);line-height:1.4;margin-top:0.1rem}
-.pcard-bio{font-size:0.72rem;color:var(--muted);line-height:1.55;margin-top:0.35rem}
-.pcard-link{font-size:0.72rem;color:var(--pu);font-weight:600;margin-top:auto;padding-top:0.4rem;text-decoration:none}
+.pcard-body{padding:0.8rem 0.9rem;flex:1;display:flex;flex-direction:column;gap:0.15rem}
+.pcard-name{font-size:0.88rem;font-weight:700;color:var(--text);line-height:1.3}
+.pcard-role{font-size:0.76rem;color:var(--pu);font-weight:600;line-height:1.3}
+.pcard-dept{font-size:0.72rem;color:var(--muted);line-height:1.4;margin-top:0.1rem}
+.pcard-bio{font-size:0.76rem;color:var(--muted);line-height:1.55;margin-top:0.35rem}
+.pcard-link{font-size:0.76rem;color:var(--pu);font-weight:600;margin-top:auto;padding-top:0.4rem;text-decoration:none}
 .pcard-link:hover{text-decoration:underline}
+.pcard-hint{font-size:0.68rem;color:#b0a8c0;margin-top:auto;padding-top:0.4rem;font-style:italic}
 
-/* FELLOWSHIP CLEAN TEXT */
-.fellow-type{margin-bottom:1.75rem}
-.fellow-type-title{font-family:var(--ds);font-size:1.05rem;color:var(--text);margin:0 0 0.2rem}
-.fellow-type-desc{font-size:0.84rem;color:var(--muted);line-height:1.75;margin:0 0 1rem}
 .fellow-divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
 
-/* FOOTER */
 .site-footer{border-top:2px solid var(--go);background:var(--ch2);margin-top:auto}
-.footer-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.9rem 0;font-size:0.72rem;color:rgba(255,255,255,.3);flex-wrap:wrap}
+.footer-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.9rem 0;font-size:0.78rem;color:rgba(255,255,255,.3);flex-wrap:wrap}
 .footer-inner a{color:rgba(255,255,255,.45);font-weight:600}
-.footer-credit{padding-bottom:0.5rem;font-size:0.63rem;color:rgba(255,255,255,.22)}
+.footer-credit{padding-bottom:0.5rem;font-size:0.68rem;color:rgba(255,255,255,.22)}
 
 .empty{text-align:center;padding:3rem 1.5rem;color:var(--muted)}
 .empty-icon{font-size:2rem;margin-bottom:0.75rem}
-.empty p{font-size:0.88rem;max-width:340px;margin:0 auto;line-height:1.65}
+.empty p{font-size:0.95rem;max-width:340px;margin:0 auto;line-height:1.65}
 
 @media(max-width:960px){
   .catalog-layout{grid-template-columns:1fr}.sidebar{position:static}
@@ -242,6 +310,7 @@ a{color:inherit;text-decoration:none}
   .person-grid-5,.person-grid-4{grid-template-columns:repeat(2,1fr)}
   .person-grid-2{grid-template-columns:1fr}
   .footer-inner{flex-direction:column;align-items:flex-start}
+  .policy-tool-card{flex-direction:column}
 }
 `;
 
@@ -249,7 +318,45 @@ const credBadge = t => ({"Degree Course":"badge-dc","Microcredential":"badge-mc"
 const levelBadge = l => ({"Undergraduate":"badge-ug","Graduate":"badge-gr","Certificate":"badge-cert"}[l]||"badge-def");
 const fmtBadge  = f => ({"In-Person":"badge-inp","Online":"badge-onl","Hybrid":"badge-hyb"}[f]||"badge-def");
 const topColor  = t => ({"Degree Course":"var(--pu)","Microcredential":"var(--go)","External Certificate":"var(--grn)","Degree Program":"#1540a8","Academic Minor":"#a05010"}[t]||"var(--border)");
+const BASE = "https://www.albany.edu/sites/default/files/styles/person_list/public/";
 
+/* ── Bio Modal ── */
+function BioModal({ person, onClose }) {
+  useEffect(() => {
+    const h = e => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+  const [imgErr, setImgErr] = useState(false);
+  const initials = person.name.split(" ").map(w=>w[0]).join("").slice(0,2);
+  const photoUrl = person.photo ? BASE + person.photo : "";
+  const paragraphs = person.bio.split("\n\n").filter(Boolean);
+  return (
+    <div className="overlay" onClick={onClose}>
+      <div className="bio-modal" onClick={e => e.stopPropagation()}>
+        <div className="bio-modal-header">
+          {photoUrl && !imgErr
+            ? <img className="bio-modal-photo" src={photoUrl} alt={person.name} onError={() => setImgErr(true)} />
+            : <div className="bio-modal-photo-placeholder">{initials}</div>
+          }
+          <div>
+            <div className="bio-modal-name">{person.name}</div>
+            <div className="bio-modal-role">{person.role}</div>
+          </div>
+          <button className="modal-close" onClick={onClose} style={{position:"absolute",top:"0.85rem",right:"0.85rem"}}>&#10005;</button>
+        </div>
+        <div className="bio-modal-body">
+          {paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+        <div className="bio-modal-footer">
+          <button className="btn btn-ghost" onClick={onClose}>Close</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Filter Group ── */
 function FilterGroup({ label, options, selected, onChange }) {
   const [open, setOpen] = useState(true);
   return (
@@ -273,6 +380,7 @@ function FilterGroup({ label, options, selected, onChange }) {
   );
 }
 
+/* ── Course Detail Modal ── */
 function DetailModal({ item, onClose, catalog }) {
   useEffect(() => {
     const h = e => { if (e.key === "Escape") onClose(); };
@@ -312,16 +420,16 @@ function DetailModal({ item, onClose, catalog }) {
             <div className="modal-section">
               <div className="modal-field-label" style={{marginBottom:8}}>Other offerings from {item.school}</div>
               {related.map(r => (
-                <div key={r.id} style={{background:"var(--surface-muted)",borderRadius:8,padding:"0.55rem 0.85rem",marginBottom:6,fontSize:"0.8rem",display:"flex",justifyContent:"space-between",alignItems:"center",gap:8}}>
+                <div key={r.id} style={{background:"var(--surface-muted)",borderRadius:8,padding:"0.6rem 0.9rem",marginBottom:6,fontSize:"0.88rem",display:"flex",justifyContent:"space-between",alignItems:"center",gap:8}}>
                   <span style={{color:"var(--text)",fontWeight:600}}>{r.code ? `${r.code}: ` : ""}{r.title}</span>
-                  <span className={`badge ${credBadge(r.credentialType)}`} style={{flexShrink:0,fontSize:"0.66rem"}}>{r.credentialType}</span>
+                  <span className={`badge ${credBadge(r.credentialType)}`} style={{flexShrink:0,fontSize:"0.7rem"}}>{r.credentialType}</span>
                 </div>
               ))}
             </div>
           )}
         </div>
         <div className="modal-footer">
-          <span style={{fontSize:"0.68rem",color:"#b0a8c0"}}>Source: {item.source}</span>
+          <span style={{fontSize:"0.73rem",color:"#b0a8c0"}}>Source: {item.source}</span>
           <a className={`btn ${item.isFree ? "btn-free" : "btn-gold"}`} href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
             {item.isFree ? "Enroll Free \u2192" : "Official Listing \u2192"}
           </a>
@@ -331,7 +439,49 @@ function DetailModal({ item, onClose, catalog }) {
   );
 }
 
-/* ══ COURSES PAGE — untouched ══ */
+/* ── Person Card ── */
+function PersonCard({ name, role, dept, photo, url, bio, clickable }) {
+  const [imgErr, setImgErr] = useState(false);
+  const initials = name.split(" ").map(w=>w[0]).join("").slice(0,2);
+  return (
+    <div className={`pcard${clickable ? " clickable" : ""}`}>
+      {photo && !imgErr
+        ? <img className="pcard-photo" src={photo} alt={name} onError={() => setImgErr(true)} />
+        : <div className="pcard-photo-placeholder">{initials}</div>
+      }
+      <div className="pcard-body">
+        <div className="pcard-name">{name}</div>
+        <div className="pcard-role">{role}</div>
+        {dept && <div className="pcard-dept">{dept}</div>}
+        {bio && <div className="pcard-bio">{bio}</div>}
+        {url && <a className="pcard-link" href={url} target="_blank" rel="noopener noreferrer" onClick={e=>e.stopPropagation()}>Profile &#8594;</a>}
+        {clickable && <div className="pcard-hint">Click to read bio</div>}
+      </div>
+    </div>
+  );
+}
+
+/* ── Fellow Card (clickable, opens bio modal) ── */
+function FellowCard({ name }) {
+  const [open, setOpen] = useState(false);
+  const data = FELLOW_BIOS[name];
+  if (!data) return null;
+  return (
+    <>
+      <div onClick={() => setOpen(true)}>
+        <PersonCard
+          name={name}
+          role={data.role}
+          photo={data.photo ? BASE + data.photo : ""}
+          clickable={true}
+        />
+      </div>
+      {open && <BioModal person={{name, role:data.role, photo:data.photo, bio:data.bio}} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
+
+/* ══ COURSES PAGE ══ */
 function CoursesPage({ catalog }) {
   const [q, setQ] = useState("");
   const [view, setView] = useState("grid");
@@ -446,8 +596,8 @@ function CoursesPage({ catalog }) {
                     {c.isFree && <span className="badge badge-free">Free</span>}
                   </div>
                   <div className="gc-footer">
-                    <span style={{fontSize:"0.65rem",color:"#b0a8c0"}}>{c.term}</span>
-                    <button className="btn btn-primary" style={{padding:"0.3rem 0.75rem",fontSize:"0.72rem"}} onClick={() => setSelected(c)}>Details &#8594;</button>
+                    <span style={{fontSize:"0.7rem",color:"#b0a8c0"}}>{c.term}</span>
+                    <button className="btn btn-primary" style={{padding:"0.32rem 0.8rem",fontSize:"0.78rem"}} onClick={() => setSelected(c)}>Details &#8594;</button>
                   </div>
                 </div>
               ))}
@@ -463,30 +613,12 @@ function CoursesPage({ catalog }) {
 /* ══ AI POLICY PAGE ══ */
 function PolicyPage() {
   const policies = [
-    { icon:"📋", title:"Academic Integrity & AI Use Policy",
-      desc:"Official UAlbany guidance on using AI tools in coursework, assessments, and research — covering citation, disclosure, and clear boundaries for students and instructors.",
-      updated:"Aug 2025", source:"Office of Academic Affairs",
-      url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-purple" },
-    { icon:"🛠", title:"CATLOE Teaching Resources for AI",
-      desc:"Practical guides from the Center for Advancement of Teaching, Learning & Online Education for instructors at every level of AI familiarity.",
-      updated:"Sep 2025", source:"CATLOE",
-      url:"https://www.albany.edu/teaching-and-learning/teaching-resources", color:"pc-gold" },
-    { icon:"📚", title:"University Libraries: Generative AI Guide",
-      desc:"Curated research guide on generative AI and academic integrity, plus citation tools, AI literacy resources, and library support.",
-      updated:"Aug 2025", source:"University Libraries",
-      url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-green" },
-    { icon:"🔒", title:"Data Privacy & AI Platforms",
-      desc:"Requirements for data handling when using AI tools — FERPA compliance, prohibited data categories, approved vendor list, and reporting obligations.",
-      updated:"Jul 2025", source:"Information Security Office",
-      url:"https://wiki.albany.edu/display/public/askit/Internet+Privacy+Policy", color:"pc-blue" },
-    { icon:"⚖️", title:"UAlbany Responsible AI Principles",
-      desc:"Institutional framework for ethical, transparent, and equitable AI — covering trustworthiness, accountability, and inclusive design commitments.",
-      updated:"Jun 2025", source:"Provost's Office",
-      url:"https://www.albany.edu/provost", color:"pc-red" },
-    { icon:"🎓", title:"Student FAQ: AI in the Classroom",
-      desc:"Can I use ChatGPT? How do I cite AI? What are the academic integrity consequences? Answers to the most common student questions.",
-      updated:"Sep 2025", source:"Dean of Students",
-      url:"https://www.albany.edu/dean-of-students", color:"pc-teal" },
+    { icon:"📋", title:"Academic Integrity & AI Use Policy", desc:"Official UAlbany guidance on using AI tools in coursework, assessments, and research — covering citation, disclosure, and clear boundaries for students and instructors.", updated:"Aug 2025", source:"Office of Academic Affairs", url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-purple" },
+    { icon:"🛠", title:"CATLOE Teaching Resources for AI", desc:"Practical guides from the Center for Advancement of Teaching, Learning & Online Education for instructors at every level of AI familiarity.", updated:"Sep 2025", source:"CATLOE", url:"https://www.albany.edu/teaching-and-learning/teaching-resources", color:"pc-gold" },
+    { icon:"📚", title:"University Libraries: Generative AI Guide", desc:"Curated research guide on generative AI and academic integrity, plus citation tools, AI literacy resources, and library support.", updated:"Aug 2025", source:"University Libraries", url:"https://libguides.library.albany.edu/academicintegrityai", color:"pc-green" },
+    { icon:"🔒", title:"Data Privacy & AI Platforms", desc:"Requirements for data handling when using AI tools — FERPA compliance, prohibited data categories, approved vendor list, and reporting obligations.", updated:"Jul 2025", source:"Information Security Office", url:"https://wiki.albany.edu/display/public/askit/Internet+Privacy+Policy", color:"pc-blue" },
+    { icon:"⚖️", title:"UAlbany Responsible AI Principles", desc:"Institutional framework for ethical, transparent, and equitable AI — covering trustworthiness, accountability, and inclusive design commitments.", updated:"Jun 2025", source:"Provost's Office", url:"https://www.albany.edu/provost", color:"pc-red" },
+    { icon:"🎓", title:"Student FAQ: AI in the Classroom", desc:"Can I use ChatGPT? How do I cite AI? What are the academic integrity consequences? Answers to the most common student questions.", updated:"Sep 2025", source:"Dean of Students", url:"https://www.albany.edu/dean-of-students", color:"pc-teal" },
   ];
 
   return (
@@ -505,20 +637,18 @@ function PolicyPage() {
         </div>
       </div>
       <div className="policy-wrap">
-        {/* Kalonji's tool embedded as iframe */}
-        <div className="policy-tool-frame">
-          <div className="policy-tool-label">
-            <span>🤖 AI Syllabus &amp; Policy Generator — Built by Kalonji Samuel, AI &amp; Society Fellow</span>
-            <a href="https://kalonjis914.github.io/AI-Syllabus-Engine/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+        <div className="policy-tool-card">
+          <div className="policy-tool-icon">🤖</div>
+          <div>
+            <div className="policy-tool-title">AI Syllabus Engine</div>
+            <div className="policy-tool-by">Developed by Kalonji Samuel &middot; MS Information Science, AI &amp; Society Fellow</div>
+            <div className="policy-tool-desc">This tool helps faculty generate AI-aligned syllabi and policy language tailored to the University at Albany's institutional guidelines. Free to use for all UAlbany community members.</div>
+            <a className="btn btn-primary" href="https://kalonjis914.github.io/AI-Syllabus-Engine/" target="_blank" rel="noopener noreferrer">
+              Launch AI Syllabus Engine &#8594;
+            </a>
           </div>
-          <iframe
-            src="https://kalonjis914.github.io/AI-Syllabus-Engine/"
-            title="AI Syllabus Engine"
-            allow="clipboard-write"
-          />
         </div>
 
-        {/* Policy cards */}
         <div className="policy-grid">
           {policies.map((p, i) => (
             <div key={i} className={`policy-card ${p.color}`}>
@@ -527,8 +657,7 @@ function PolicyPage() {
               <p className="policy-card-desc">{p.desc}</p>
               <div className="policy-card-meta">Source: {p.source} &middot; Updated: {p.updated}</div>
               <div style={{marginTop:"0.75rem"}}>
-                <a className="btn btn-ghost" href={p.url} target="_blank" rel="noopener noreferrer"
-                  style={{fontSize:"0.76rem",padding:"0.4rem 0.85rem"}}>
+                <a className="btn btn-ghost" href={p.url} target="_blank" rel="noopener noreferrer" style={{fontSize:"0.82rem",padding:"0.42rem 0.9rem"}}>
                   Read policy &#8594;
                 </a>
               </div>
@@ -540,30 +669,8 @@ function PolicyPage() {
   );
 }
 
-/* ══ PERSON CARD ══ */
-function PersonCard({ name, role, dept, photo, url, bio }) {
-  const [imgErr, setImgErr] = useState(false);
-  const initials = name.split(" ").map(w=>w[0]).join("").slice(0,2);
-  return (
-    <div className="pcard">
-      {photo && !imgErr
-        ? <img className="pcard-photo" src={photo} alt={name} onError={() => setImgErr(true)} />
-        : <div className="pcard-photo-placeholder">{initials}</div>
-      }
-      <div className="pcard-body">
-        <div className="pcard-name">{name}</div>
-        <div className="pcard-role">{role}</div>
-        {dept && <div className="pcard-dept">{dept}</div>}
-        {bio && <div className="pcard-bio">{bio}</div>}
-        {url && <a className="pcard-link" href={url} target="_blank" rel="noopener noreferrer">Profile &#8594;</a>}
-      </div>
-    </div>
-  );
-}
-
 /* ══ ABOUT PAGE ══ */
 const ABOUT_TABS = ["About","Leadership","Fellowships"];
-const BASE = "https://www.albany.edu/sites/default/files/styles/person_list/public/";
 
 function AboutPage() {
   const [tab, setTab] = useState("About");
@@ -588,12 +695,11 @@ function AboutPage() {
 
       <div className="about-content">
 
-        {/* ── ABOUT TAB ── */}
         {tab === "About" && (<>
           <div className="about-section">
             <h2 className="about-sh">About the College</h2>
             <img className="about-photo" src="https://www.albany.edu/sites/default/files/styles/thin_hero/public/ai-teaching-3.jpg" alt="UAlbany AI teaching" />
-            <p className="about-p">Founded in Spring 2025 with a <strong>$2.4 million investment from the State University of New York (SUNY)</strong>, the AI &amp; Society College prepares undergraduate and graduate students, faculty and staff for a world shaped by artificial intelligence.</p>
+            <p className="about-p">Founded in Spring 2025 with a $2.4 million investment from the State University of New York (SUNY), the AI &amp; Society College prepares undergraduate and graduate students, faculty and staff for a world shaped by artificial intelligence.</p>
             <p className="about-p">With a strong emphasis on trustworthiness, equity, privacy and accountability, the College serves as a catalyst integrating AI education across all nine schools and colleges at the University at Albany.</p>
             <p className="about-p">The College ensures that every student — whether pursuing a degree in STEM, business, social sciences or the arts — has access to AI-infused learning through cross-disciplinary courses, microcredentials and teaching initiatives.</p>
           </div>
@@ -601,14 +707,14 @@ function AboutPage() {
           <div className="about-section">
             <h2 className="about-sh">Physical Space &amp; AI Makerspace</h2>
             <img className="about-photo" src="https://www.albany.edu/sites/default/files/styles/thin_hero/public/ai-teaching.jpg" alt="UAlbany AI classroom" />
-            <p className="about-p">The College will be housed in <strong>Lecture Center (LC) 30 and LC 31</strong>, designed for collaboration and innovation. Features include individual and group workspaces for fellows, an AI-enabled meeting room for hybrid events, a lounge for informal exchange, and <strong>GPU workstations in the AI Makerspace</strong> open to all UAlbany community members.</p>
-            <p className="about-p">Stay tuned for the <strong>Spring 2026 ribbon cutting ceremony!</strong></p>
+            <p className="about-p">The College will be housed in Lecture Center (LC) 30 and LC 31, designed for collaboration and innovation. Features include individual and group workspaces for fellows, an AI-enabled meeting room for hybrid events, a lounge for informal exchange, and GPU workstations in the AI Makerspace open to all UAlbany community members.</p>
+            <p className="about-p">Stay tuned for the Spring 2026 ribbon cutting ceremony!</p>
           </div>
 
           <div className="about-section">
             <h2 className="about-sh">Contact the College</h2>
-            <p className="about-p"><strong>Campus Community:</strong> Faculty, staff and students are invited to co-create innovative teaching, learning experiences, interdisciplinary programs and ways to promote ethical AI use.</p>
-            <p className="about-p"><strong>Partners Beyond Campus:</strong> The AI &amp; Society College welcomes partnerships with industry, nonprofits, government and philanthropists.</p>
+            <p className="about-p">Campus Community: Faculty, staff and students are invited to co-create innovative teaching, learning experiences, interdisciplinary programs and ways to promote ethical AI use.</p>
+            <p className="about-p">Partners Beyond Campus: The AI &amp; Society College welcomes partnerships with industry, nonprofits, government and philanthropists.</p>
             <p className="about-p">Contact us at <a href="mailto:aisocietycollege@albany.edu">aisocietycollege@albany.edu</a> or <a href="https://www.linkedin.com/showcase/ai-society-ualbany/" target="_blank" rel="noopener noreferrer">follow us on LinkedIn</a>.</p>
             <div style={{display:"flex",gap:"0.75rem",flexWrap:"wrap",marginTop:"1rem"}}>
               <a className="btn btn-primary" href="https://www.albany.edu/ai-plus/ai-society-college" target="_blank" rel="noopener noreferrer">Official College Page &#8594;</a>
@@ -617,38 +723,29 @@ function AboutPage() {
           </div>
         </>)}
 
-        {/* ── LEADERSHIP TAB ── */}
         {tab === "Leadership" && (<>
           <div className="about-section">
             <span className="section-label">Directors</span>
-            <div className="person-grid-2">
-              <PersonCard name="Hany Elgala" role="Acting Director, AI & Society College"
-                dept="Associate Professor, Electrical & Computer Engineering, CNSE"
+            <div className="person-grid-5">
+              <PersonCard name="Hany Elgala" role="Acting Director, AI & Society College" dept="Associate Professor, Electrical & Computer Engineering, CNSE"
                 photo={BASE+"2024-09/20240904_Hany_Elgala_IMG_0359.JPG?h=b11ddda9&itok=Q9psqyiw"}
                 url="https://www.albany.edu/ece/faculty/hany-elgala"
-                bio="Research focuses on visible light communications, LiFi networks, and AI in wireless communications." />
-              <PersonCard name="Mila Gascó-Hernandez" role="Acting Associate Director"
-                dept="Associate Professor & Research Director, Center for Technology in Government, Rockefeller College"
+                bio="Research on visible light communications, LiFi networks, and AI in wireless communications." />
+              <PersonCard name="Mila Gascó-Hernandez" role="Acting Associate Director" dept="Associate Professor, Center for Technology in Government, Rockefeller College"
                 photo={BASE+"2025-12/Foto%20Mila%20Gasco%20%289%29%20-%20UAlbany.jpg?h=6e0df202&itok=dA0YqEMI"}
                 url="https://www.albany.edu/rockefeller/faculty/mila-gasco-hernandez"
-                bio="Research focuses on digital government, AI governance, and technology policy." />
+                bio="Research on digital government, AI governance, and technology policy." />
             </div>
           </div>
 
           <div className="about-section">
-            <span className="section-label">Advisory Board — Faculty Representatives (1 of 2)</span>
+            <span className="section-label">Advisory Board — Faculty Representatives</span>
             <div className="person-grid-5">
               <PersonCard name="Marcie Newton" role="Assistant Director & Lecturer II" dept="Writing & Critical Inquiry Program" photo={BASE+"2023-06/Marcie%20Newton.jpg?h=1114f690&itok=i9pTo0Tr"} url="https://www.albany.edu/writing-critical-inquiry/staff-directory/marcie-newton" />
               <PersonCard name="Rita Biswas" role="Ackner-Newman Endowed Professor, Finance" dept="Massry School of Business" photo={BASE+"2019-10/rita-biswas.jpg?h=4693a17a&itok=i0rqIvoS"} url="https://www.albany.edu/business/faculty/rita-biswas" />
               <PersonCard name="Alessandra Buccella" role="Assistant Professor" dept="Department of Philosophy" photo={BASE+"2024-09/20240828_Alessandra_Buccella_IMG_0457.JPG?h=d9227b67&itok=RYxbdoAD"} url="https://www.albany.edu/philosophy/faculty/alessandra-buccella" />
               <PersonCard name="M. Abdullah Canbaz" role="Assistant Professor, IST" dept="CEHC" photo={BASE+"2022-06/M.%20Abdullah-Canbaz.jpg?h=d8638c13&itok=jjGIeqKo"} url="https://www.albany.edu/cehc/faculty/m-abdullah-canbaz" />
               <PersonCard name="Ming-Ching Chang" role="Associate Professor" dept="Computer Science & ECE, CNSE" photo={BASE+"2016_10_25_Ming-Ching%20Chang_19.jpg?h=82f92a78&itok=aMg_DXr2"} url="https://www.albany.edu/computer-science/faculty/ming-ching-chang" />
-            </div>
-          </div>
-
-          <div className="about-section">
-            <span className="section-label">Advisory Board — Faculty Representatives (2 of 2)</span>
-            <div className="person-grid-5">
               <PersonCard name="Daniel Goodwin" role="Professor & Department Chair" dept="Art & Art History" photo={BASE+"2023-09/daniel-goodwin.jpg?h=a7e6d17b&itok=hiSzKxk7"} url="https://www.albany.edu/art/faculty/daniel-goodwin" />
               <PersonCard name="Cecilia Levy" role="Associate Professor" dept="Department of Physics" photo={BASE+"2024-09/20240828_Cecilia_Levy_IMG_0274.JPG?h=0c848498&itok=Jyr-KILx"} url="https://www.albany.edu/physics/faculty/cecilia-levy" />
               <PersonCard name="Mary Valentis" role="Visiting Associate Professor; CHATS Director" dept="Department of English" photo={BASE+"2023-09/mary-valentis.jpg?h=a7e6d17b&itok=5-4U0YSb"} url="https://www.albany.edu/english/faculty/mary-valentis" />
@@ -659,14 +756,13 @@ function AboutPage() {
 
           <div className="about-section">
             <span className="section-label">Student Representatives</span>
-            <div className="person-grid-2">
+            <div className="person-grid-5">
               <PersonCard name="Alana Borrero" role="Undergraduate Student Representative" photo={BASE+"Alana%20Borrero.jpeg?h=cb4297e8&itok=Jbui5LPG"} />
               <PersonCard name="Shannon Sutorius" role="Graduate Student Representative" photo={BASE+"Shannon%20Sutorius.JPG?h=d5b9011c&itok=EXkyG39J"} />
             </div>
           </div>
         </>)}
 
-        {/* ── FELLOWSHIPS TAB ── */}
         {tab === "Fellowships" && (<>
           <div className="about-section">
             <h2 className="about-sh">Fellowship Programs</h2>
@@ -696,11 +792,11 @@ function AboutPage() {
 
           <div className="about-section">
             <h2 className="about-sh">2025–2026 Dissertation Fellows</h2>
+            <p className="about-p" style={{fontSize:"0.85rem",color:"var(--muted)",marginBottom:"1rem"}}>Click any card to read full bio.</p>
             <div className="person-grid-4">
-              <PersonCard name="Rawan Abdelaal" role="Doctoral Student, Curriculum and Instruction" photo={BASE+"rawan.jpeg?h=fbfd6560&itok=vyupWg-X"} />
-              <PersonCard name="Karan Bhasin" role="Doctoral Student, Economics" photo={BASE+"KB_Headshot.jpg?h=f329a4ed&itok=3gpPKhoM"} />
-              <PersonCard name="Anastasios Karnazes" role="Doctoral Student, English" photo="" />
-              <PersonCard name="Iris Aleida Pinzón Arteaga" role="Doctoral Student, Sociology" photo="" />
+              {["Rawan Abdelaal","Karan Bhasin","Anastasios Karnazes","Iris Aleida Pinzón Arteaga"].map(name => (
+                <FellowCard key={name} name={name} />
+              ))}
             </div>
           </div>
 
@@ -708,15 +804,11 @@ function AboutPage() {
 
           <div className="about-section">
             <h2 className="about-sh">Spring 2026 Master's Experiential Learning Fellows</h2>
+            <p className="about-p" style={{fontSize:"0.85rem",color:"var(--muted)",marginBottom:"1rem"}}>Click any card to read full bio.</p>
             <div className="person-grid-4">
-              <PersonCard name="Batzaya (Zaya) Byambasambuu" role="MPA, Public Administration & Policy" photo={BASE+"Batzaya%20%28Zaya%29%20Byambasambuu.jpeg?h=7ea24003&itok=07vrGXt9"} />
-              <PersonCard name="Kathleen Boyle" role="MS, Curriculum Development & Instructional Technology" photo={BASE+"Kathleen-Boyle.jpg?h=5e69b338&itok=c9LtT663"} />
-              <PersonCard name="Ayotokunbo Egbontan" role="MS, Environmental Health Science" photo={BASE+"Ayotokunbo%20Egbontan.png?h=4efb6df5&itok=5gvNQQzu"} />
-              <PersonCard name="Prakash R. Kota" role="MBA, Business Administration" photo={BASE+"Prakash-Kota.jpg?h=b044a8f9&itok=I7rey-Gt"} />
-              <PersonCard name="Jayanth Reddy Lethakula" role="MS, Data Science" photo={BASE+"Jayanth%20Reddy%20Lethakula.jpg?h=7d892785&itok=qKTDXJVT"} />
-              <PersonCard name="Robert Manning" role="MA, Philosophy" photo={BASE+"Robert%20Manning.png?h=d9227cf5&itok=K30aBrjA"} />
-              <PersonCard name="Kalonji Samuel" role="MS, Information Science" photo={BASE+"Kalonji%20Samuel.jpg?h=ad6374a7&itok=LDYhwzho"} />
-              <PersonCard name="Gayathri Gupta Samudrala" role="MS, Educational Psychology & Methodology" photo={BASE+"Gayathri-Gupta-Samudrala.jpg?h=0e903c36&itok=dWVgD9MH"} />
+              {["Batzaya (Zaya) Byambasambuu","Kathleen Boyle","Ayotokunbo Egbontan","Prakash R. Kota","Jayanth Reddy Lethakula","Robert Manning","Kalonji Samuel","Gayathri Gupta Samudrala"].map(name => (
+                <FellowCard key={name} name={name} />
+              ))}
             </div>
           </div>
         </>)}
@@ -738,10 +830,7 @@ export default function App() {
       .catch(err => console.error("Failed to load courses.json:", err));
   }, []);
 
-  function goTo(p) {
-    setPage(p);
-    try { window.scrollTo(0, 0); } catch (_) {}
-  }
+  function goTo(p) { setPage(p); try { window.scrollTo(0, 0); } catch (_) {} }
 
   return (
     <>
