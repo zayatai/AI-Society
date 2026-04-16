@@ -277,7 +277,21 @@ a{color:inherit;text-decoration:none}
 .person-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
 .person-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:0.85rem;margin-bottom:1.5rem}
 .person-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;margin-bottom:1.5rem}
-.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all 0.15s;display:flex;flex-direction:column}
+
+/* Director cards — horizontal, wider, less tall */
+.director-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.5rem}
+.pcard-director{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all 0.15s;display:flex;flex-direction:row}
+.pcard-director:hover{border-color:rgba(70,22,107,0.3);box-shadow:var(--shadow-sm)}
+.pcard-director .pcard-photo{width:160px;min-width:160px;height:200px;aspect-ratio:unset;object-fit:cover;object-position:top;flex-shrink:0}
+.pcard-director .pcard-photo-placeholder{width:160px;min-width:160px;height:200px;aspect-ratio:unset;flex-shrink:0}
+.pcard-director .pcard-body{padding:1.1rem 1.2rem}
+.pcard-director .pcard-name{font-size:1rem}
+.pcard-director .pcard-role{font-size:0.82rem}
+.pcard-director .pcard-dept{font-size:0.78rem}
+.pcard-director .pcard-bio{font-size:0.78rem}
+
+/* Regular person cards — uniform height */
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:all 0.15s;display:flex;flex-direction:column;height:100%}
 .pcard:hover{border-color:rgba(70,22,107,0.3);box-shadow:var(--shadow-sm)}
 .pcard.clickable{cursor:pointer}
 .pcard.clickable:hover{transform:translateY(-2px)}
@@ -297,7 +311,7 @@ a{color:inherit;text-decoration:none}
 .site-footer{border-top:2px solid var(--go);background:var(--ch2);margin-top:auto}
 .footer-inner{width:min(var(--container),calc(100% - 2rem));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.9rem 0;font-size:0.78rem;color:rgba(255,255,255,.3);flex-wrap:wrap}
 .footer-inner a{color:rgba(255,255,255,.45);font-weight:600}
-.footer-credit{padding-bottom:0.5rem;font-size:0.68rem;color:rgba(255,255,255,.22)}
+.footer-credit{padding-bottom:0.5rem;font-size:0.68rem;color:var(--go)}
 
 .empty{text-align:center;padding:3rem 1.5rem;color:var(--muted)}
 .empty-icon{font-size:2rem;margin-bottom:0.75rem}
@@ -726,15 +740,27 @@ function AboutPage() {
         {tab === "Leadership" && (<>
           <div className="about-section">
             <span className="section-label">Directors</span>
-            <div className="person-grid-5">
-              <PersonCard name="Hany Elgala" role="Acting Director, AI & Society College" dept="Associate Professor, Electrical & Computer Engineering, CNSE"
-                photo={BASE+"2024-09/20240904_Hany_Elgala_IMG_0359.JPG?h=b11ddda9&itok=Q9psqyiw"}
-                url="https://www.albany.edu/ece/faculty/hany-elgala"
-                bio="Research on visible light communications, LiFi networks, and AI in wireless communications." />
-              <PersonCard name="Mila Gascó-Hernandez" role="Acting Associate Director" dept="Associate Professor, Center for Technology in Government, Rockefeller College"
-                photo={BASE+"2025-12/Foto%20Mila%20Gasco%20%289%29%20-%20UAlbany.jpg?h=6e0df202&itok=dA0YqEMI"}
-                url="https://www.albany.edu/rockefeller/faculty/mila-gasco-hernandez"
-                bio="Research on digital government, AI governance, and technology policy." />
+            <div className="director-grid">
+              <div className="pcard-director">
+                <img className="pcard-photo" src={BASE+"2024-09/20240904_Hany_Elgala_IMG_0359.JPG?h=b11ddda9&itok=Q9psqyiw"} alt="Hany Elgala" onError={e=>e.target.style.display='none'} />
+                <div className="pcard-body">
+                  <div className="pcard-name">Hany Elgala</div>
+                  <div className="pcard-role">Acting Director, AI &amp; Society College</div>
+                  <div className="pcard-dept">Associate Professor, Electrical &amp; Computer Engineering, CNSE</div>
+                  <div className="pcard-bio">Research on visible light communications, LiFi networks, and AI in wireless communications.</div>
+                  <a className="pcard-link" href="https://www.albany.edu/ece/faculty/hany-elgala" target="_blank" rel="noopener noreferrer">Profile &#8594;</a>
+                </div>
+              </div>
+              <div className="pcard-director">
+                <img className="pcard-photo" src={BASE+"2025-12/Foto%20Mila%20Gasco%20%289%29%20-%20UAlbany.jpg?h=6e0df202&itok=dA0YqEMI"} alt="Mila Gascó-Hernandez" onError={e=>e.target.style.display='none'} />
+                <div className="pcard-body">
+                  <div className="pcard-name">Mila Gascó-Hernandez</div>
+                  <div className="pcard-role">Acting Associate Director</div>
+                  <div className="pcard-dept">Associate Professor, Center for Technology in Government, Rockefeller College</div>
+                  <div className="pcard-bio">Research on digital government, AI governance, and technology policy.</div>
+                  <a className="pcard-link" href="https://www.albany.edu/rockefeller/faculty/mila-gasco-hernandez" target="_blank" rel="noopener noreferrer">Profile &#8594;</a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -859,7 +885,7 @@ export default function App() {
             <span><a href="mailto:aisocietycollege@albany.edu">Contact</a></span>
           </div>
           <div className="footer-inner footer-credit">
-            <span>Developed by Batzaya (Zaya) Byambasambuu &middot; AI &amp; Society Experiential Learning Fellow &middot; 2025&ndash;2026</span>
+            <span>Developed by Batzaya Byambasambuu (Zaya) &middot; AI &amp; Society Experiential Learning Fellow &middot; 2025&ndash;2026</span>
           </div>
         </footer>
       </div>
